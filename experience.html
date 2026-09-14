@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience — Khalequzzaman Likhon</title>
+  <meta name="description" content="Research experience, education, skills, honors, teaching, and certifications of Md Khalequzzaman Sarker Likhon, Machine Learning Engineer at Accelx Inc.">
+  <meta name="author" content="Md Khalequzzaman Sarker Likhon">
+  <meta name="theme-color" content="#f5f3ee">
+  <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(!t){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)})();</script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%232f5d50'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='white'>KL</text></svg>">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-nav">
+    <nav class="nav-inner" aria-label="Primary">
+      <a class="brand" href="index.html">K. Likhon<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="experience.html" aria-current="page">Experience</a></li>
+        <li><a href="blog.html">Writing</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="btn-cv" href="khalequzzamanlikhon_cv.pdf" target="_blank" rel="noopener">CV</a>
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="experience.html" aria-current="page">Experience</a></li>
+      <li><a href="blog.html">Writing</a></li>
+      <li><a href="khalequzzamanlikhon_cv.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+    </ul>
+  </div>
+
+  <main id="main" class="container">
+    <header class="page-header">
+      <p class="eyebrow">Experience</p>
+      <h1>Research, education &amp; skills</h1>
+      <p>The full record is in my <a href="khalequzzamanlikhon_cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>.</p>
+    </header>
+
+    <section class="section" style="padding-top:48px">
+      <h2 class="section-title" style="font-size:24px;margin-bottom:24px">Research experience</h2>
+      <ol class="timeline">
+        <li class="tl-item">
+          <div class="tl-head">
+            <h3>Applied ML Research, Accelx Inc.</h3>
+            <span class="tl-date">Jan 2025 — Present</span>
+          </div>
+          <p class="tl-org">Machine Learning Engineer (safety-critical perception and language systems) · Dhaka, Bangladesh</p>
+
+          <div class="subsystem">
+            <h4>Spatiotemporal and pose-based violence recognition</h4>
+            <ul>
+              <li>Compared a Kinetics-pretrained R(2+1)D-18, a BERT-style Transformer over YOLO11-Pose dynamics features, and a two-stream pose–RGB cross-attention model on RWF-2000.</li>
+              <li>Investigated motion-aware clip mining (dense optical flow plus pose heuristics) to reduce label noise from video-level annotations.</li>
+            </ul>
+          </div>
+
+          <div class="subsystem">
+            <h4>Grounded and abstaining multimodal and LLM systems</h4>
+            <ul>
+              <li>Designed a pipeline in which the LLM writes prose only from facts computed deterministically, with every citation checked by a word-overlap test whose threshold was set from observed failures (about 17% overlap for misattributed citations vs. close to 100% for correct ones).</li>
+              <li>Built a staged image threat-analysis cascade (OCR first, a VLM only for hard cases) with knowledge-base verification, calibrated confidence, and handoff to human review.</li>
+              <li>Evaluated generated text with an LLM judge, ROUGE-L, and fact recall.</li>
+            </ul>
+          </div>
+
+          <div class="subsystem">
+            <h4>Deployed systems</h4>
+            <ul>
+              <li>Real-time video safety analytics (weapon, violence, fall) for live multi-camera surveillance, served at sub-100 ms latency with TorchServe.</li>
+              <li>AI risk &amp; content-safety platform: fine-tuned RoBERTa classifiers, deterministic intent aggregation, and grounded, cited Llama 3.2 alerts.</li>
+              <li>Multimodal content &amp; threat analysis (PaddleOCR, Qwen3-VL) and zero-shot URL categorization (BART-MNLI, Redis).</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" style="padding-top:56px">
+      <h2 class="section-title" style="font-size:24px;margin-bottom:24px">Education</h2>
+      <ol class="timeline">
+        <li class="tl-item">
+          <div class="tl-head">
+            <h3>B.Sc. in Computer Science and Engineering</h3>
+            <span class="tl-date">Apr 2016 — Jan 2021</span>
+          </div>
+          <p class="tl-org">Ahsanullah University of Science and Technology · Dhaka, Bangladesh</p>
+          <ul class="plain-list">
+            <li><strong>Thesis:</strong> Design of an Arrhythmia Classification Algorithm Using 2-D Convolutional Neural Networks</li>
+            <li><strong>Relevant coursework:</strong> Artificial Intelligence, Pattern Recognition, Digital Image Processing, Computer Graphics, Soft Computing, Data Structures, Algorithms</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" style="padding-top:56px">
+      <h2 class="section-title" style="font-size:24px;margin-bottom:24px">Technical skills</h2>
+      <div class="skills">
+        <div class="skill-cat">
+          <h4>Research tools</h4>
+          <div class="stack"><span>PyTorch</span><span>TensorFlow / Keras</span><span>Hugging Face</span><span>Ultralytics</span><span>scikit-learn</span><span>OpenCV</span><span>W&amp;B</span></div>
+        </div>
+        <div class="skill-cat">
+          <h4>Methods</h4>
+          <div class="stack"><span>Detection</span><span>Pose estimation</span><span>Tracking</span><span>Video classification</span><span>Vision-language models</span><span>Transformer fine-tuning</span><span>RAG &amp; LLM agents</span><span>Evaluation design</span></div>
+        </div>
+        <div class="skill-cat">
+          <h4>Languages</h4>
+          <div class="stack"><span>Python</span><span>C / C++</span><span>SQL</span><span>Bash</span></div>
+        </div>
+        <div class="skill-cat">
+          <h4>Engineering</h4>
+          <div class="stack"><span>FastAPI</span><span>Docker</span><span>TorchServe</span><span>Redis</span><span>Qdrant</span><span>Git</span><span>Linux</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section two-col" style="padding-top:56px">
+      <div class="mini">
+        <h3>Honors &amp; awards</h3>
+        <ul class="plain-list">
+          <li>Education Board Scholarship, Secondary School Certificate (SSC), 2012</li>
+          <li>3rd Place, District Astro Olympiad, 2010</li>
+          <li>Education Board Scholarship, Junior School Certificate, 2009</li>
+        </ul>
+        <h3 style="margin-top:28px">Certifications</h3>
+        <ul class="plain-list">
+          <li>Machine Learning, Coursera (2023)</li>
+          <li>Neural Networks and Deep Learning, Coursera (2021)</li>
+        </ul>
+      </div>
+      <div class="mini">
+        <h3>Teaching, service &amp; activities</h3>
+        <ul class="plain-list">
+          <li>Home tutor for secondary and higher-secondary students (grades 10–12), 2017–2022</li>
+          <li>Organizing Committee, AUST Codeware (programming contest), 2019</li>
+          <li>Competitive programming: 100+ problems on Beecrowd, Codeforces, and CodeChef</li>
+        </ul>
+        <h3 style="margin-top:28px">Languages</h3>
+        <ul class="plain-list">
+          <li>Bengali (native)</li>
+          <li>English (full professional proficiency)</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© <span id="year">2026</span> Md Khalequzzaman Sarker Likhon</p>
+      <p><a href="mailto:khalequzzamanlikhon@gmail.com">Email</a> · <a href="https://github.com/khalequzzamanlikhon" target="_blank" rel="noopener">GitHub</a> · <a href="https://linkedin.com/in/khalequzzaman-likhon" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://orcid.org/0009-0002-7048-0727" target="_blank" rel="noopener">ORCID</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

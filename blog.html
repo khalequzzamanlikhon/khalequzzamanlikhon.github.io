@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing — Khalequzzaman Likhon</title>
+  <meta name="description" content="Research notes by Khalequzzaman Likhon on zero-shot vision-language models under deployment shift, pose-based video recognition, citation grounding, and shortcut learning.">
+  <meta name="author" content="Md Khalequzzaman Sarker Likhon">
+  <meta name="theme-color" content="#f5f3ee">
+  <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(!t){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)})();</script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%232f5d50'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='white'>KL</text></svg>">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-nav">
+    <nav class="nav-inner" aria-label="Primary">
+      <a class="brand" href="index.html">K. Likhon<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="blog.html" aria-current="page">Writing</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="btn-cv" href="khalequzzamanlikhon_cv.pdf" target="_blank" rel="noopener">CV</a>
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="blog.html" aria-current="page">Writing</a></li>
+      <li><a href="khalequzzamanlikhon_cv.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+    </ul>
+  </div>
+
+  <main id="main" class="container">
+    <header class="page-header">
+      <p class="eyebrow">Writing</p>
+      <h1>Notes on where models fail</h1>
+      <p>Longer write-ups of findings from my research and projects. They're being written now; each one expands on a result described elsewhere on this site.</p>
+    </header>
+
+    <div class="filter-bar" data-filter-for="postList">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-filter="cv" aria-pressed="false">Vision &amp; video</button>
+      <button class="chip" type="button" data-filter="llm" aria-pressed="false">LLMs &amp; grounding</button>
+      <button class="chip" type="button" data-filter="eval" aria-pressed="false">Evaluation</button>
+    </div>
+
+    <div id="postList" style="margin-top:28px">
+      <article class="post reveal" data-type="cv">
+        <div class="post-meta"><span class="tag project">Vision &amp; video</span><span>In progress</span></div>
+        <h3>Pose or pixels? Three ways to recognize fights on RWF-2000</h3>
+        <p>R(2+1)D-18, a Transformer over YOLO11-Pose dynamics, and a two-stream cross-attention model, plus why video-level labels call for motion-aware clip mining.</p>
+      </article>
+
+      <article class="post reveal" data-type="llm">
+        <div class="post-meta"><span class="tag project">LLMs &amp; grounding</span><span>In progress</span></div>
+        <h3>Setting a citation-check threshold from real failures</h3>
+        <p>When a small LLM writes only from deterministic facts, a simple word-overlap test can catch misattributed citations. The data put wrong citations at about 17% overlap and correct ones near 100%.</p>
+      </article>
+
+      <article class="post reveal" data-type="llm eval">
+        <div class="post-meta"><span class="tag project">LLMs &amp; grounding</span><span>In progress</span></div>
+        <h3>A reranker meets financial filings: faithfulness from 0.93 to 0.77</h3>
+        <p>What a general-domain cross-encoder did to a RAG system over SEC 10-K filings, and why retrieval components need domain-specific evaluation too.</p>
+      </article>
+
+      <article class="post reveal" data-type="eval">
+        <div class="post-meta"><span class="tag research">Evaluation</span><span>In progress</span></div>
+        <h3>0.998 macro-F1 and nothing learned: shortcut learning in fingerprint alteration detection</h3>
+        <p>A perturbation analysis on SOCOFing, and what it shows about how synthetic benchmarks can reward detecting the editing process instead of the task.</p>
+      </article>
+    </div>
+
+    <p class="note">Want to know when these go live? <a href="mailto:khalequzzamanlikhon@gmail.com?subject=Writing%20updates">Send me an email</a>.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© <span id="year">2026</span> Md Khalequzzaman Sarker Likhon</p>
+      <p><a href="mailto:khalequzzamanlikhon@gmail.com">Email</a> · <a href="https://github.com/khalequzzamanlikhon" target="_blank" rel="noopener">GitHub</a> · <a href="https://linkedin.com/in/khalequzzaman-likhon" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://orcid.org/0009-0002-7048-0727" target="_blank" rel="noopener">ORCID</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
