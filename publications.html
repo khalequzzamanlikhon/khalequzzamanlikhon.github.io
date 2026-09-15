@@ -48,13 +48,17 @@
   </div>
 
   <main id="main" class="container">
-    <header class="page-header">
-      <p class="eyebrow">Publications</p>
-      <h1>Manuscripts &amp; reports</h1>
-      <p>Each manuscript is listed with its current status. Two are deliberately negative-result studies: they test whether strong benchmark numbers mean what they appear to. My ORCID is <a href="https://orcid.org/0009-0002-7048-0727" target="_blank" rel="noopener">0009-0002-7048-0727</a>.</p>
+    <header class="page-header page-bar">
+      <h1>Publications</h1>
+      <a class="icon-btn" href="https://orcid.org/0009-0002-7048-0727" target="_blank" rel="noopener" aria-label="ORCID profile" title="ORCID"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8.5 10v7M8.5 7.2v.1" stroke-linecap="round" stroke-width="2.2"/><path d="M11.5 10h2.2a3.5 3.5 0 0 1 0 7h-2.2z" stroke-linejoin="round"/></svg></a>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input class="search-input" type="search" placeholder="Search publications…" aria-label="Search publications" data-search-for="pubList" autocomplete="off">
+      </div>
     </header>
 
-    <section class="section" style="padding-top:40px">
+    <div id="pubList">
+    <section class="section" style="padding-top:40px" data-search-group>
       <h2 class="section-title" style="font-size:24px;margin-bottom:8px">Manuscripts</h2>
       <p class="note" style="margin:0 0 16px">* denotes equal contribution</p>
 
@@ -92,7 +96,7 @@
       </article>
     </section>
 
-    <section class="section" style="padding-top:56px">
+    <section class="section" style="padding-top:56px" data-search-group>
       <h2 class="section-title" style="font-size:24px;margin-bottom:16px">Thesis</h2>
 
       <article class="pub reveal">
@@ -105,6 +109,8 @@
         </div>
       </article>
     </section>
+    </div>
+    <p class="search-empty" data-empty-for="pubList" hidden>No publications match “<span class="search-term"></span>”. <button class="chip search-clear" type="button">Clear search</button></p>
   </main>
 
   <footer class="site-footer">

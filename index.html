@@ -71,223 +71,142 @@
     </ul>
   </div>
 
-  <main id="main">
+  <main id="main" class="home-layout">
 
-    <!-- ============ INTRO ============ -->
-    <section class="hero container">
-      <div class="hero-grid">
-        <div>
-          <div class="status"><span class="status-dot" aria-hidden="true"></span>Open to PhD opportunities</div>
-          <h1>Khalequzzaman Likhon</h1>
-          <p class="hero-tagline">Machine learning engineer building <em>reliable</em> vision, video, and language systems.</p>
-          <div class="hero-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>ML Engineer, Accelx Inc.</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>B.Sc. CSE, AUST</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Dhaka, Bangladesh</span>
-          </div>
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="khalequzzamanlikhon_cv.pdf" target="_blank" rel="noopener">Download CV</a>
-            <a class="btn btn-ghost" href="mailto:khalequzzamanlikhon@gmail.com">Email me</a>
-          </div>
-          <div class="social">
-            <a class="icon-btn" href="https://github.com/khalequzzamanlikhon" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
-            <a class="icon-btn" href="https://linkedin.com/in/khalequzzaman-likhon" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
-            <a class="icon-btn" href="https://orcid.org/0009-0002-7048-0727" target="_blank" rel="noopener" aria-label="ORCID"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8.5 10v7M8.5 7.2v.1" stroke-linecap="round" stroke-width="2.2"/><path d="M11.5 10h2.2a3.5 3.5 0 0 1 0 7h-2.2z" stroke-linejoin="round"/></svg></a>
-            <a class="icon-btn" href="mailto:khalequzzamanlikhon@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
-          </div>
-        </div>
-        <div class="hero-photo">
-          <img src="assets/profile.jpg" alt="Portrait of Khalequzzaman Likhon" width="240" height="240">
-        </div>
+    <!-- ============ LEFT: INTRO ============ -->
+    <aside class="profile" aria-label="Profile">
+      <div class="profile-photo">
+        <img src="assets/profile.jpg" alt="Portrait of Khalequzzaman Likhon" width="168" height="168">
       </div>
-    </section>
-
-    <!-- ============ RESEARCH INTERESTS ============ -->
-    <section class="section container" id="research">
-      <p class="eyebrow">Research interests</p>
-      <h2 class="section-title">What I work on</h2>
-      <ul class="area-list" aria-label="Research areas">
-        <li>Computer Vision</li>
-        <li>Real-Time Video Understanding</li>
-        <li>Large Language Models</li>
-        <li>Generative AI</li>
-        <li>Multimodal Learning</li>
-        <li>Human-Centered Computing</li>
+      <h1>Khalequzzaman Likhon</h1>
+      <p class="profile-tagline">Machine learning engineer building <em>reliable</em> vision, video, and language systems.</p>
+      <div class="status"><span class="status-dot" aria-hidden="true"></span>Open to research collaborations</div>
+      <ul class="profile-meta">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>ML Engineer, Accelx Inc.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>B.Sc. CSE, AUST</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Dhaka, Bangladesh</li>
       </ul>
-      <p class="section-lead">Across all of these, I care most about reliability: how models behave under real-world distribution shift, when they should abstain, and whether their outputs stay grounded in evidence that can be checked.</p>
-
-      <h3 class="subhead">Questions I'm pursuing</h3>
-      <div class="interest-grid">
-        <article class="interest reveal">
-          <span class="interest-num">01 · Computer Vision</span>
-          <p class="interest-q">When a detector reaches 0.998 macro-F1, has it learned the task, or just the traces of how the benchmark was made?</p>
-          <p class="interest-evidence">See: <a href="publications.html">fingerprint alteration manuscript</a>, <a href="projects.html#depthcraft">DepthCraft</a></p>
-        </article>
-        <article class="interest reveal">
-          <span class="interest-num">02 · Real-Time Video Understanding</span>
-          <p class="interest-q">For detecting fights in surveillance video, which works better: appearance-based spatiotemporal features or explicit human-pose dynamics?</p>
-          <p class="interest-evidence">See: <a href="experience.html">RWF-2000 comparison</a>, <a href="projects.html#sentinel">Sentinel</a></p>
-        </article>
-        <article class="interest reveal">
-          <span class="interest-num">03 · Large Language Models</span>
-          <p class="interest-q">How can small local models (3B-parameter LLMs, 2B VLMs) be made trustworthy enough for high-stakes decision support?</p>
-          <p class="interest-evidence">See: <a href="projects.html#docuroute">DocuRoute</a>, <a href="projects.html#sentinelrag">SentinelRAG</a></p>
-        </article>
-        <article class="interest reveal">
-          <span class="interest-num">04 · Generative AI</span>
-          <p class="interest-q">How do we keep generated output faithful to its source, whether that's generated code to its tests or a dubbed voice to its speaker?</p>
-          <p class="interest-evidence">See: <a href="projects.html#research2code">Research→Code</a>, <a href="projects.html#voicedub">voice-dub</a></p>
-        </article>
-        <article class="interest reveal">
-          <span class="interest-num">05 · Multimodal Learning</span>
-          <p class="interest-q">When does fusing another modality actually help, and would it beat a control where that modality is shuffled?</p>
-          <p class="interest-evidence">See: <a href="publications.html">earthquake-damage negative-result study</a></p>
-        </article>
-        <article class="interest reveal">
-          <span class="interest-num">06 · Human-Centered Computing</span>
-          <p class="interest-q">When should an AI system stop and hand the decision back to a person?</p>
-          <p class="interest-evidence">See: <a href="projects.html#phoneagent">Phone Support Agent</a>, <a href="projects.html#research2code">Research→Code</a></p>
-        </article>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="khalequzzamanlikhon_cv.pdf" target="_blank" rel="noopener">Download CV</a>
+        <a class="btn btn-ghost" href="mailto:khalequzzamanlikhon@gmail.com">Email me</a>
       </div>
-    </section>
+      <div class="social">
+        <a class="icon-btn" href="https://github.com/khalequzzamanlikhon" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+        <a class="icon-btn" href="https://linkedin.com/in/khalequzzaman-likhon" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a class="icon-btn" href="https://orcid.org/0009-0002-7048-0727" target="_blank" rel="noopener" aria-label="ORCID"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8.5 10v7M8.5 7.2v.1" stroke-linecap="round" stroke-width="2.2"/><path d="M11.5 10h2.2a3.5 3.5 0 0 1 0 7h-2.2z" stroke-linejoin="round"/></svg></a>
+        <a class="icon-btn" href="mailto:khalequzzamanlikhon@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+      </div>
+    </aside>
 
-    <!-- ============ ABOUT ============ -->
-    <section class="section container" id="about">
-      <p class="eyebrow">About</p>
-      <h2 class="section-title">A short introduction</h2>
+    <!-- ============ RIGHT: CONTENT ============ -->
+    <div class="home-content">
 
-      <div class="about-grid">
+      <section class="section" id="about">
+        <h2 class="section-title">About</h2>
         <div class="prose">
-          <p>I'm a <strong>Machine Learning Engineer at Accelx Inc.</strong>, where I've built safety-critical perception and language systems since January 2025. These include real-time weapon, violence, and fall detection on live multi-camera video, and risk-assessment systems that write grounded, cited alerts. Watching these systems fail in the real world is why I focus on <strong>reliability</strong>.</p>
+          <p>I'm a <strong>machine learning researcher</strong> working on computer vision, video understanding, and large language models. I build systems that see, understand, and explain what is happening in images, videos, and text.</p>
 
-          <p>My research asks whether strong results mean what they seem to. I've compared pose-based and appearance-based models for violence recognition, built LLM pipelines where every citation is checked, and written negative-result studies that test models against their shortcuts. One manuscript is under review at <em>Applied AI Letters</em>.</p>
+          <p>I care most about <strong>reliability</strong>: making sure models keep working in the real world, not just on benchmarks. My work covers real-time video analysis, multimodal learning, and language models that give grounded, trustworthy answers.</p>
 
-          <p>I hold a <strong>B.Sc. in Computer Science and Engineering</strong> from Ahsanullah University of Science and Technology. I'm now looking for <strong>PhD opportunities</strong>.</p>
+          <p>I'm always happy to collaborate on research in these areas.</p>
         </div>
+      </section>
 
-        <aside class="facts" aria-label="Quick facts">
-          <dl>
-            <dt>Currently</dt>
-            <dd>Machine Learning Engineer, Accelx Inc.</dd>
-            <dt>Education</dt>
-            <dd>B.Sc. CSE, AUST (2016–2021)</dd>
-            <dt>Manuscripts</dt>
-            <dd>1 under review · 2 in preparation</dd>
-            <dt>ORCID</dt>
-            <dd><a href="https://orcid.org/0009-0002-7048-0727" target="_blank" rel="noopener">0009-0002-7048-0727</a></dd>
-          </dl>
-        </aside>
-      </div>
-    </section>
+      <section class="section" id="research">
+        <h2 class="section-title">Research interests</h2>
+        <ul class="area-list" aria-label="Research areas">
+          <li>Computer Vision</li>
+          <li>Real-Time Video Understanding</li>
+          <li>Large Language Models</li>
+          <li>Generative AI</li>
+          <li>Multimodal Learning</li>
+          <li>Human-Centered Computing</li>
+        </ul>
+        <p class="research-note">Across all of these, I'm drawn to one question: <em>do models still behave reliably once they leave the benchmark?</em></p>
+      </section>
 
-    <!-- ============ NEWS ============ -->
-    <section class="section container" id="news">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">News</p>
-          <h2 class="section-title">Recent updates</h2>
-        </div>
-        <div class="controls" data-filter-for="newsList">
-          <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
-          <button class="chip" type="button" data-filter="research" aria-pressed="false">Research</button>
-          <button class="chip" type="button" data-filter="career" aria-pressed="false">Career</button>
-          <select class="select" id="newsSort" aria-label="Sort news">
-            <option value="newest">Newest</option>
-            <option value="oldest">Oldest</option>
+      <section class="section" id="news">
+        <div class="section-head">
+          <h2 class="section-title">News</h2>
+          <select class="select" id="newsFilter" data-filter-list="newsList" aria-label="Filter news">
+            <option value="all">All news</option>
+            <option value="paper">Papers</option>
+            <option value="career">Career</option>
+            <option value="course">Courses</option>
+            <option value="thesis">Thesis</option>
           </select>
         </div>
-      </div>
+        <ul class="news-list" id="newsList">
+          <li class="news-item" data-type="paper">
+            <span class="news-date">2026</span>
+            <span class="tag">Paper</span>
+            <p class="news-text">Submitted <strong>Joint Prediction of UHPC Properties Using a Feature-Tokenizer Transformer</strong> to <em>Applied AI Letters</em>. It's under review.</p>
+          </li>
+          <li class="news-item" data-type="career">
+            <span class="news-date">Jan 2025</span>
+            <span class="tag">Career</span>
+            <p class="news-text">Joined <strong>Accelx Inc.</strong> as a Machine Learning Engineer.</p>
+          </li>
+          <li class="news-item" data-type="course">
+            <span class="news-date">2023</span>
+            <span class="tag">Course</span>
+            <p class="news-text">Completed <strong>Machine Learning</strong> on Coursera.</p>
+          </li>
+          <li class="news-item" data-type="thesis">
+            <span class="news-date">Jan 2021</span>
+            <span class="tag">Thesis</span>
+            <p class="news-text">Graduated from AUST with a thesis on <strong>arrhythmia classification using 2-D CNNs</strong>.</p>
+          </li>
+        </ul>
+      </section>
 
-      <ul class="news-list" id="newsList">
-        <li class="news-item" data-date="2026-03" data-type="research">
-          <span class="news-date">2026</span>
-          <span class="tag">Paper</span>
-          <p class="news-text">Submitted <strong>Joint Prediction of UHPC Properties Using a Feature-Tokenizer Transformer</strong> to <em>Applied AI Letters</em>. It's under review.</p>
-        </li>
-        <li class="news-item" data-date="2026-02" data-type="research">
-          <span class="news-date">2026</span>
-          <span class="tag">Paper</span>
-          <p class="news-text">Preparing <strong>Out-of-Focus Is Not Obliteration</strong>, a perturbation analysis of fingerprint alteration detectors.</p>
-        </li>
-        <li class="news-item" data-date="2026-01" data-type="research">
-          <span class="news-date">2026</span>
-          <span class="tag">Paper</span>
-          <p class="news-text">Preparing <strong>Does Geometry Help?</strong>, a negative-result study on post-earthquake damage classification.</p>
-        </li>
-        <li class="news-item" data-date="2025-01" data-type="career">
-          <span class="news-date">Jan 2025</span>
-          <span class="tag">Career</span>
-          <p class="news-text">Joined <strong>Accelx Inc.</strong> as a Machine Learning Engineer.</p>
-        </li>
-        <li class="news-item" data-date="2023-06" data-type="career">
-          <span class="news-date">2023</span>
-          <span class="tag">Course</span>
-          <p class="news-text">Completed <strong>Machine Learning</strong> on Coursera.</p>
-        </li>
-        <li class="news-item" data-date="2021-01" data-type="research">
-          <span class="news-date">Jan 2021</span>
-          <span class="tag">Thesis</span>
-          <p class="news-text">Graduated from AUST with a thesis on <strong>arrhythmia classification using 2-D CNNs</strong>.</p>
-        </li>
-        <li class="news-item" data-date="2019-06" data-type="career">
-          <span class="news-date">2019</span>
-          <span class="tag">Service</span>
-          <p class="news-text">Served on the organizing committee of <strong>AUST Codeware</strong>.</p>
-        </li>
-      </ul>
-    </section>
-
-    <!-- ============ SELECTED WORK ============ -->
-    <section class="section container" id="work">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Selected projects</p>
-          <h2 class="section-title">Things I've built</h2>
+      <section class="section" id="work">
+        <div class="section-head">
+          <h2 class="section-title">Selected projects</h2>
+          <a class="link-arrow" href="projects.html">All projects →</a>
         </div>
-        <a class="link-arrow" href="projects.html">All projects →</a>
-      </div>
 
-      <div class="card-grid">
-        <a class="card reveal" href="projects.html#sentinel">
-          <span class="card-kicker">Video anomaly detection</span>
-          <h3>Sentinel</h3>
-          <p>Multi-camera, real-time anomaly detection. YOLOv8 + BoT-SORT tracking feeds rules for falls, loitering, abandoned objects, and wrong-way motion, and an LSTM autoencoder flags what the rules miss.</p>
-          <div class="stack"><span>YOLOv8</span><span>BoT-SORT</span><span>LSTM autoencoder</span></div>
-        </a>
-        <a class="card reveal" href="projects.html#docuroute">
-          <span class="card-kicker">Agentic retrieval</span>
-          <h3>DocuRoute</h3>
-          <p>Routes financial questions to hybrid sparse–dense retrieval or sandboxed text-to-SQL over SEC 10-K filings, with cited answers and a custom evaluation harness.</p>
-          <div class="highlight">A general-domain reranker lowered faithfulness from <b>0.93</b> to <b>0.77</b></div>
-          <div class="stack"><span>RAG</span><span>Text-to-SQL</span><span>Evaluation</span></div>
-        </a>
-        <a class="card reveal" href="projects.html#research2code">
-          <span class="card-kicker">Multi-agent program synthesis</span>
-          <h3>Research→Code</h3>
-          <p>Researcher, coder, and reviewer agents on LangGraph with MCP tools. Code is tested in a sandbox, retries are capped, and a human approves the result.</p>
-          <div class="stack"><span>LangGraph</span><span>MCP</span><span>Sandboxing</span></div>
-        </a>
-        <a class="card reveal" href="projects.html#depthcraft">
-          <span class="card-kicker">3D from one image</span>
-          <h3>DepthCraft</h3>
-          <p>Fuses monocular metric depth into 3D meshes for distance measurement, with uncertainty estimates.</p>
-          <div class="stack"><span>Monocular depth</span><span>3D meshes</span><span>Uncertainty</span></div>
-        </a>
-      </div>
-    </section>
+        <div class="card-grid">
+          <a class="card reveal" href="projects.html#overcooked">
+            <span class="card-kicker">Telemetry vs. video</span>
+            <h3>Overcooked AAR</h3>
+            <p>After-action reviews of real human–human Overcooked play, written by an LLM from event logs and by a VLM from gameplay video, then blind-rated to find where the two disagree.</p>
+            <div class="stack"><span>Qwen2.5-VL</span><span>LLMs</span><span>Human eval</span></div>
+          </a>
+          <a class="card reveal" href="projects.html#sentinel">
+            <span class="card-kicker">Video anomaly detection</span>
+            <h3>Sentinel</h3>
+            <p>Multi-camera, real-time anomaly detection. YOLOv8 + BoT-SORT tracking feeds a rule engine for falls, loitering, abandoned objects, crowding, and wrong-way motion.</p>
+            <div class="highlight">Full pipeline at <b>19.7 FPS</b> on one GPU</div>
+            <div class="stack"><span>YOLOv8</span><span>BoT-SORT</span><span>Rule engine</span></div>
+          </a>
+          <a class="card reveal" href="projects.html#docuroute">
+            <span class="card-kicker">Agentic retrieval</span>
+            <h3>DocuRoute</h3>
+            <p>Routes financial questions to hybrid sparse–dense retrieval or sandboxed text-to-SQL over SEC 10-K filings, with cited answers and a custom evaluation harness.</p>
+            <div class="highlight">A general-domain reranker lowered faithfulness from <b>0.93</b> to <b>0.77</b></div>
+            <div class="stack"><span>RAG</span><span>Text-to-SQL</span><span>Evaluation</span></div>
+          </a>
+          <a class="card reveal" href="projects.html#depthcraft">
+            <span class="card-kicker">3D from one image</span>
+            <h3>DepthCraft</h3>
+            <p>Lifts Depth Anything V2 metric depth into a 3D point cloud and measures real distances with uncertainty, from a single photo.</p>
+            <div class="stack"><span>Monocular depth</span><span>Point clouds</span><span>Uncertainty</span></div>
+          </a>        </div>
+      </section>
 
-    <!-- ============ CONTACT ============ -->
-    <section class="container" id="contact">
-      <div class="contact reveal">
-        <div>
-          <h2>Let's talk</h2>
-          <p>I'd love to hear from faculty recruiting PhD students and from researchers working on vision, video, or language models.</p>
+      <section id="contact">
+        <div class="contact reveal">
+          <div>
+            <h2>Let's collaborate</h2>
+            <p>I'm open to research collaborations, especially on vision, video, or language models. A short email about what you're working on is the best way to start.</p>
+          </div>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="mailto:khalequzzamanlikhon@gmail.com">Get in touch</a>
+          </div>
         </div>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="mailto:khalequzzamanlikhon@gmail.com">khalequzzamanlikhon@gmail.com</a>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer">

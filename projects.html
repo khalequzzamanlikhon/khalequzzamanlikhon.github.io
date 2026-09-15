@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects — Khalequzzaman Likhon</title>
-  <meta name="description" content="Independent projects by Khalequzzaman Likhon in video anomaly detection, 3D depth, agentic retrieval, multi-agent systems, document parsing, and speech, plus earlier computer vision work.">
+  <meta name="description" content="Independent projects by Khalequzzaman Likhon in video anomaly detection, 3D depth, telemetry-vs-video analysis, agentic and self-correcting retrieval, multi-agent systems, and speech, plus earlier computer vision work.">
   <meta name="author" content="Md Khalequzzaman Sarker Likhon">
   <meta name="theme-color" content="#f5f3ee">
   <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(!t){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)})();</script>
@@ -48,10 +48,13 @@
   </div>
 
   <main id="main" class="container">
-    <header class="page-header">
-      <p class="eyebrow">Projects</p>
-      <h1>Things I've built</h1>
-      <p>Independent projects in video, retrieval, agents, and speech, plus the earlier vision work where I started. Code for each is on GitHub.</p>
+    <header class="page-header page-bar">
+      <h1>Projects</h1>
+      <a class="icon-btn" href="https://github.com/khalequzzamanlikhon" target="_blank" rel="noopener" aria-label="GitHub profile" title="GitHub"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input class="search-input" type="search" placeholder="Search projects…" aria-label="Search projects" data-search-for="projectList" autocomplete="off">
+      </div>
     </header>
 
     <div class="filter-bar" data-filter-for="projectList">
@@ -68,14 +71,24 @@
         <h2>Independent projects</h2>
         <p>Open-source systems I designed and built.</p>
 
+        <article class="project" id="overcooked" data-type="cv llm">
+          <div class="project-top">
+            <h3>Overcooked AAR</h3>
+            <span class="badge">Telemetry vs. video</span>
+          </div>
+          <p>What does a model miss when it reads logs instead of watching? Real two-player Overcooked trials (human–human play across five layouts) are turned into two after-action reviews: one written by an LLM from a natural-language event timeline, one by a vision-language model from the rendered gameplay video. Blind human ratings show where they diverge. Telemetry knows exactly what happened; video catches hesitation, near-misses, and blocked attempts that never become logged events.</p>
+          <div class="stack"><span>Qwen2.5-VL</span><span>LLMs</span><span>Event extraction</span><span>Human evaluation</span></div>
+          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/overcooked_AAR" target="_blank" rel="noopener">Code →</a></div>
+        </article>
+
         <article class="project" id="sentinel" data-type="cv">
           <div class="project-top">
             <h3>Sentinel</h3>
             <span class="badge">Video anomaly detection</span>
           </div>
-          <p>Multi-camera, real-time video anomaly detection. Detection and tracking (YOLOv8 + BoT-SORT) feed persistence-gated rules for falls, loitering, abandoned objects, and wrong-way motion. An LSTM trajectory autoencoder flags patterns that no rule covers.</p>
-          <div class="stack"><span>YOLOv8</span><span>BoT-SORT</span><span>LSTM autoencoder</span></div>
-          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/video-anomaly" target="_blank" rel="noopener">Code →</a></div>
+          <p>Multi-camera, real-time video anomaly detection. YOLOv8 detection and BoT-SORT tracking feed a rule engine for falls, loitering, abandoned objects, crowd density, and wrong-way motion, with deduplicated alerts, Prometheus metrics, and a Streamlit dashboard. The full pipeline runs at <strong>19.7 FPS</strong> on an RTX A5000 and survived a soak test with zero exceptions.</p>
+          <div class="stack"><span>YOLOv8</span><span>BoT-SORT</span><span>OpenCV</span><span>Prometheus</span></div>
+          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/sentinel-video-anomaly-detection" target="_blank" rel="noopener">Code →</a></div>
         </article>
 
         <article class="project" id="depthcraft" data-type="cv">
@@ -83,9 +96,9 @@
             <h3>DepthCraft</h3>
             <span class="badge">3D from one image</span>
           </div>
-          <p>Turns a single image into measurable 3D. Monocular metric depth is fused into 3D meshes for distance measurement, with uncertainty estimates.</p>
-          <div class="stack"><span>Monocular depth</span><span>3D meshes</span><span>Uncertainty</span></div>
-          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/depth_craft" target="_blank" rel="noopener">Code →</a></div>
+          <p>Turns a single image into measurable 3D. Depth Anything V2 metric depth is lifted into a cleaned point cloud, and a virtual tape measure reports distances with uncertainty (e.g. 18.63 ± 0.29 m). Served by a FastAPI backend with a React/Three.js viewer, at about 330 ms per image.</p>
+          <div class="stack"><span>Depth Anything V2</span><span>Open3D</span><span>FastAPI</span><span>Three.js</span></div>
+          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/depthcraft-monocular-3d" target="_blank" rel="noopener">Code →</a></div>
         </article>
 
         <article class="project" id="docuroute" data-type="llm">
@@ -113,19 +126,9 @@
             <h3>SentinelRAG</h3>
             <span class="badge">Self-correcting RAG</span>
           </div>
-          <p>A self-correcting retrieval-augmented generation pipeline with hallucination auditing.</p>
-          <div class="stack"><span>RAG</span><span>Hallucination auditing</span></div>
+          <p>A self-correcting agentic RAG pipeline built as a LangGraph workflow. Input guardrails block prompt injection, hybrid dense + BM25 retrieval feeds an LLM relevance grader, and failed retrievals trigger query rewriting or a web-search fallback. Surviving chunks are reranked with a cross-encoder, and a separate pass audits the answer for unsupported claims before citations are attached.</p>
+          <div class="stack"><span>LangGraph</span><span>Qdrant + BM25</span><span>BGE reranker</span><span>Hallucination auditing</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/SentinelRAG" target="_blank" rel="noopener">Code →</a></div>
-        </article>
-
-        <article class="project" id="docuvision" data-type="cv">
-          <div class="project-top">
-            <h3>DocuVision</h3>
-            <span class="badge">Document parsing</span>
-          </div>
-          <p>A document layout and table parser built with classical computer vision.</p>
-          <div class="stack"><span>Classical CV</span><span>Layout analysis</span><span>Table parsing</span></div>
-          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/docuvision" target="_blank" rel="noopener">Code →</a></div>
         </article>
 
         <article class="project" id="voicedub" data-type="speech">
@@ -133,9 +136,9 @@
             <h3>voice-dub</h3>
             <span class="badge">Speaker-cloned dubbing</span>
           </div>
-          <p>Time-aligned video dubbing in the original speaker's voice: diarization with pyannote, Whisper transcription, NLLB translation, and XTTS-v2 voice cloning.</p>
+          <p>Time-aligned video dubbing in the original speaker's voice: diarization with pyannote, faster-whisper transcription, NLLB-200 translation, XTTS-v2 voice cloning per speaker, then time-stretching and remuxing back into the video.</p>
           <div class="stack"><span>Whisper</span><span>pyannote</span><span>NLLB</span><span>XTTS-v2</span></div>
-          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/voice_dub" target="_blank" rel="noopener">Code →</a></div>
+          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/voice-dub-ai-dubbing" target="_blank" rel="noopener">Code →</a></div>
         </article>
 
         <article class="project" id="phoneagent" data-type="speech llm">
@@ -143,19 +146,9 @@
             <h3>Phone Support Agent</h3>
             <span class="badge">Real-time voice AI</span>
           </div>
-          <p>A voice agent that books appointments over phone calls. It streams speech-to-text, uses LLM tool calling, and speaks back with text-to-speech, handling interruptions (barge-in) and escalating to a human when needed.</p>
-          <div class="stack"><span>Streaming STT</span><span>Tool calling</span><span>TTS</span></div>
-          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/phone-support-agent" target="_blank" rel="noopener">Code →</a></div>
-        </article>
-
-        <article class="project" id="more" data-type="speech">
-          <div class="project-top">
-            <h3>More on GitHub</h3>
-          </div>
-          <div class="card-links" style="margin-top:4px;flex-wrap:wrap">
-            <a href="https://github.com/khalequzzamanlikhon/jarvis_voice_assistant" target="_blank" rel="noopener">jarvis_voice_assistant →</a>
-            <a href="https://github.com/khalequzzamanlikhon/speech_translator" target="_blank" rel="noopener">speech_translator →</a>
-          </div>
+          <p>A voice agent that books, reschedules, and cancels appointments over phone calls. Twilio streams the call audio to Deepgram speech-to-text, an LLM drives a state-machine dialogue through tool calls, and ElevenLabs speaks back. Appointments are only confirmed after the backend succeeds, callers can interrupt (barge-in), and hard cases escalate to a human.</p>
+          <div class="stack"><span>Twilio</span><span>Deepgram</span><span>Tool calling</span><span>ElevenLabs</span></div>
+          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/phone-support-voice-agent" target="_blank" rel="noopener">Code →</a></div>
         </article>
       </section>
 
@@ -207,6 +200,7 @@
         </article>
       </section>
     </div>
+    <p class="search-empty" data-empty-for="projectList" hidden>No projects match “<span class="search-term"></span>”. <button class="chip search-clear" type="button">Clear search</button></p>
   </main>
 
   <footer class="site-footer">
