@@ -65,10 +65,12 @@
           <p class="tl-org">Machine Learning Engineer (safety-critical perception and language systems) · Dhaka, Bangladesh</p>
 
           <div class="subsystem">
-            <h4>Spatiotemporal and pose-based violence recognition</h4>
+            <h4>Appearance or body dynamics: recognising violent interaction in video</h4>
             <ul>
-              <li>Compared a Kinetics-pretrained R(2+1)D-18, a BERT-style Transformer over YOLO11-Pose dynamics features, and a two-stream pose–RGB cross-attention model on RWF-2000.</li>
+              <li>A Kinetics-pretrained R(2+1)D-18 on 2-second clips reaches <strong>84.6%</strong> clip accuracy on the RWF-2000 validation split; a Transformer over YOLO11-Pose dynamics for up to four people (joint velocities, arm angles, an inter-person contact cue) reaches <strong>61.7%</strong>, and a pose–RGB fusion model <strong>69.0%</strong>.</li>
+              <li>Checking the pose features rather than the accuracy: about <strong>70%</strong> of the "contact between two people" signals came from joints that were missing for <em>both</em> people (the pose model returns (0,0) for low-confidence joints), not from real proximity. Person slots are also not tracked between frames, so the model can report that a fight happened but not who did what.</li>
               <li>Investigated motion-aware clip mining (dense optical flow plus pose heuristics) to reduce label noise from video-level annotations.</li>
+              <li>Caveat I keep with these numbers: checkpoints were selected on the same validation split they are reported on, so they are optimistic.</li>
             </ul>
           </div>
 

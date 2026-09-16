@@ -76,8 +76,8 @@
             <h3>Overcooked AAR</h3>
             <span class="badge">Telemetry vs. video</span>
           </div>
-          <p>What does a model miss when it reads logs instead of watching? Real two-player Overcooked trials (human–human play across five layouts) are turned into two after-action reviews: one written by an LLM from a natural-language event timeline, one by a vision-language model from the rendered gameplay video. Blind human ratings show where they diverge. Telemetry knows exactly what happened; video catches hesitation, near-misses, and blocked attempts that never become logged events.</p>
-          <div class="stack"><span>Qwen2.5-VL</span><span>LLMs</span><span>Event extraction</span><span>Human evaluation</span></div>
+          <p><strong>Pilot study, September 2026.</strong> When the same model writes an after-action review from a game log and from gameplay video, which of its claims hold up? Qwen2.5-VL reads each source one minute at a time and returns timestamped claims, and every claim is checked against the log. Over 15 human–human episodes (1,140 claims, 45 one-minute windows), claims from the log were supported <strong>81%</strong> of the time against <strong>53%</strong> from video — and the gap is timing rather than invention: <strong>98%</strong> of the video model's timestamps landed on a 5-second grid (against 1% for the log), so it was pacing claims evenly instead of reading the clock that is on screen in every frame. It also under-counted deliveries in 41 of 45 minutes. Blind pairwise human rating is built but not yet run.</p>
+          <div class="stack"><span>Qwen2.5-VL</span><span>Claim verification</span><span>Event extraction</span><span>Human evaluation (pending)</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/overcooked_AAR" target="_blank" rel="noopener">Code →</a></div>
         </article>
 

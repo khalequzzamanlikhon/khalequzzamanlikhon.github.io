@@ -115,12 +115,10 @@
       <section class="section" id="research">
         <h2 class="section-title">Research interests</h2>
         <ul class="area-list" aria-label="Research areas">
-          <li>Computer Vision</li>
-          <li>Real-Time Video Understanding</li>
-          <li>Large Language Models</li>
-          <li>Generative AI</li>
-          <li>Multimodal Learning</li>
-          <li>Human-Centered Computing</li>
+          <li>Understanding human behaviour from multimodal data</li>
+          <li>Video LLMs</li>
+          <li>Grounded, verifiable AI explanations</li>
+          <li>Human-centred evaluation and measurement validity</li>
         </ul>
         <p class="research-note">Across all of these, I'm drawn to one question: <em>do models still behave reliably once they leave the benchmark?</em></p>
       </section>
@@ -170,8 +168,9 @@
           <a class="card reveal" href="projects.html#overcooked">
             <span class="card-kicker">Telemetry vs. video</span>
             <h3>Overcooked AAR</h3>
-            <p>After-action reviews of real human–human Overcooked play, written by an LLM from event logs and by a VLM from gameplay video, then blind-rated to find where the two disagree.</p>
-            <div class="stack"><span>Qwen2.5-VL</span><span>LLMs</span><span>Human eval</span></div>
+            <p>The same model writes an after-action review of real human–human Overcooked play twice — from the event log and from the gameplay video — and every claim it makes is checked against the log.</p>
+            <div class="highlight">Log claims held up <b>81%</b> of the time, video claims <b>53%</b></div>
+            <div class="stack"><span>Qwen2.5-VL</span><span>Claim checking</span><span>Pilot study</span></div>
           </a>
           <a class="card reveal" href="projects.html#sentinel">
             <span class="card-kicker">Video anomaly detection</span>
