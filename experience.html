@@ -67,10 +67,8 @@
           <div class="subsystem">
             <h4>Appearance or body dynamics: recognising violent interaction in video</h4>
             <ul>
-              <li>A Kinetics-pretrained R(2+1)D-18 on 2-second clips reaches <strong>84.6%</strong> clip accuracy on the RWF-2000 validation split; a Transformer over YOLO11-Pose dynamics for up to four people (joint velocities, arm angles, an inter-person contact cue) reaches <strong>61.7%</strong>, and a pose–RGB fusion model <strong>69.0%</strong>.</li>
-              <li>Checking the pose features rather than the accuracy: about <strong>70%</strong> of the "contact between two people" signals came from joints that were missing for <em>both</em> people (the pose model returns (0,0) for low-confidence joints), not from real proximity. Person slots are also not tracked between frames, so the model can report that a fight happened but not who did what.</li>
-              <li>Investigated motion-aware clip mining (dense optical flow plus pose heuristics) to reduce label noise from video-level annotations.</li>
-              <li>Caveat I keep with these numbers: checkpoints were selected on the same validation split they are reported on, so they are optimistic.</li>
+              <li>Compared a Kinetics-pretrained R(2+1)D-18 (<strong>84.6%</strong> clip accuracy on the RWF-2000 validation split), a Transformer over YOLO11-Pose dynamics for up to four people (<strong>61.7%</strong>) and a pose–RGB fusion model (<strong>69.0%</strong>), with motion-aware clip mining to reduce label noise.</li>
+              <li>Audited the pose features rather than the score: about <strong>70%</strong> of the inter-person "contact" signals came from joints missing for both people, not real proximity.</li>
             </ul>
           </div>
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects — Khalequzzaman Likhon</title>
-  <meta name="description" content="Independent projects by Khalequzzaman Likhon in video anomaly detection, 3D depth, telemetry-vs-video analysis, agentic and self-correcting retrieval, multi-agent systems, and speech, plus earlier computer vision work.">
+  <meta name="description" content="Independent projects by Khalequzzaman Likhon in video anomaly detection, 3D depth, telemetry-vs-video analysis, agentic and self-correcting retrieval, multi-agent systems and speech.">
   <meta name="author" content="Md Khalequzzaman Sarker Likhon">
   <meta name="theme-color" content="#f5f3ee">
   <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(!t){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)})();</script>
@@ -62,7 +62,6 @@
       <button class="chip" type="button" data-filter="cv" aria-pressed="false">Vision &amp; video</button>
       <button class="chip" type="button" data-filter="llm" aria-pressed="false">LLMs, RAG &amp; agents</button>
       <button class="chip" type="button" data-filter="speech" aria-pressed="false">Speech &amp; voice</button>
-      <button class="chip" type="button" data-filter="health" aria-pressed="false">Medical</button>
     </div>
 
     <div id="projectList">
@@ -76,7 +75,7 @@
             <h3>Overcooked AAR</h3>
             <span class="badge">Telemetry vs. video</span>
           </div>
-          <p><strong>Pilot study, September 2026.</strong> When the same model writes an after-action review from a game log and from gameplay video, which of its claims hold up? Qwen2.5-VL reads each source one minute at a time and returns timestamped claims, and every claim is checked against the log. Over 15 human–human episodes (1,140 claims, 45 one-minute windows), claims from the log were supported <strong>81%</strong> of the time against <strong>53%</strong> from video — and the gap is timing rather than invention: <strong>98%</strong> of the video model's timestamps landed on a 5-second grid (against 1% for the log), so it was pacing claims evenly instead of reading the clock that is on screen in every frame. It also under-counted deliveries in 41 of 45 minutes. Blind pairwise human rating is built but not yet run.</p>
+          <p><strong>Pilot study, September 2026.</strong> The same model writes an after-action review of real two-player Overcooked play twice — from the event log and from the gameplay video — and every claim is checked against the log. Over 15 episodes, log claims held up <strong>81%</strong> of the time against <strong>53%</strong> for video, and <strong>98%</strong> of the video model's timestamps landed on a 5-second grid, so it was pacing claims evenly instead of reading the clock on screen. Blind pairwise rating built, not yet run.</p>
           <div class="stack"><span>Qwen2.5-VL</span><span>Claim verification</span><span>Event extraction</span><span>Human evaluation (pending)</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/overcooked_AAR" target="_blank" rel="noopener">Code →</a></div>
         </article>
@@ -86,7 +85,7 @@
             <h3>Sentinel</h3>
             <span class="badge">Video anomaly detection</span>
           </div>
-          <p>Multi-camera, real-time video anomaly detection. YOLOv8 detection and BoT-SORT tracking feed a rule engine for falls, loitering, abandoned objects, crowd density, and wrong-way motion, with deduplicated alerts, Prometheus metrics, and a Streamlit dashboard. The full pipeline runs at <strong>19.7 FPS</strong> on an RTX A5000 and survived a soak test with zero exceptions.</p>
+          <p>Multi-camera video anomaly detection: YOLOv8 and BoT-SORT feed a rule engine for falls, loitering, abandoned objects, crowding and wrong-way motion, with deduplicated alerts and a dashboard. <strong>19.7 FPS</strong> end to end on an RTX A5000.</p>
           <div class="stack"><span>YOLOv8</span><span>BoT-SORT</span><span>OpenCV</span><span>Prometheus</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/sentinel-video-anomaly-detection" target="_blank" rel="noopener">Code →</a></div>
         </article>
@@ -96,7 +95,7 @@
             <h3>DepthCraft</h3>
             <span class="badge">3D from one image</span>
           </div>
-          <p>Turns a single image into measurable 3D. Depth Anything V2 metric depth is lifted into a cleaned point cloud, and a virtual tape measure reports distances with uncertainty (e.g. 18.63 ± 0.29 m). Served by a FastAPI backend with a React/Three.js viewer, at about 330 ms per image.</p>
+          <p>One photo becomes measurable 3D: Depth Anything V2 metric depth lifted into a cleaned point cloud, with a virtual tape measure that reports distance and its uncertainty (18.63 ± 0.29 m). FastAPI backend, Three.js viewer, about 330 ms per image.</p>
           <div class="stack"><span>Depth Anything V2</span><span>Open3D</span><span>FastAPI</span><span>Three.js</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/depthcraft-monocular-3d" target="_blank" rel="noopener">Code →</a></div>
         </article>
@@ -106,7 +105,7 @@
             <h3>DocuRoute</h3>
             <span class="badge">Agentic retrieval</span>
           </div>
-          <p>Agentic retrieval for financial documents. An LLM router, grounded in the extracted table schemas, sends each question over SEC 10-K filings to hybrid sparse–dense retrieval or to sandboxed text-to-SQL, and every answer carries citations. I implemented the evaluation metrics (context precision and recall, faithfulness, relevancy) and used them to choose the retrieval configuration. In this study, a general-domain cross-encoder reranker <strong>lowered faithfulness from 0.93 to 0.77</strong>, which suggests reranking is sensitive to domain shift.</p>
+          <p>An LLM router sends each question over SEC 10-K filings to hybrid retrieval or to sandboxed text-to-SQL, and every answer carries citations. The evaluation harness is the interesting part: a general-domain reranker <strong>lowered faithfulness from 0.93 to 0.77</strong>.</p>
           <div class="stack"><span>RAG</span><span>Hybrid retrieval</span><span>Text-to-SQL</span><span>Evaluation harness</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/DocuRoute" target="_blank" rel="noopener">Code →</a></div>
         </article>
@@ -116,7 +115,7 @@
             <h3>Research→Code</h3>
             <span class="badge">Multi-agent program synthesis</span>
           </div>
-          <p>Researcher, coder, and reviewer agents built with LangGraph, with tools served over MCP. Generated code is tested in a sandbox, deterministic routing caps the number of retries, and a human approves results before anything is written.</p>
+          <p>Researcher, coder and reviewer agents in LangGraph, with tools served over MCP. Generated code is tested in a sandbox, retries are bounded, and a human approves before anything is written.</p>
           <div class="stack"><span>LangGraph</span><span>MCP</span><span>Sandboxed execution</span><span>Human-in-the-loop</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/research2code" target="_blank" rel="noopener">Code →</a></div>
         </article>
@@ -126,7 +125,7 @@
             <h3>SentinelRAG</h3>
             <span class="badge">Self-correcting RAG</span>
           </div>
-          <p>A self-correcting agentic RAG pipeline built as a LangGraph workflow. Input guardrails block prompt injection, hybrid dense + BM25 retrieval feeds an LLM relevance grader, and failed retrievals trigger query rewriting or a web-search fallback. Surviving chunks are reranked with a cross-encoder, and a separate pass audits the answer for unsupported claims before citations are attached.</p>
+          <p>Self-correcting RAG as a LangGraph workflow: input guardrails, hybrid dense and BM25 retrieval, a relevance grader, query rewriting or a web fallback, cross-encoder reranking, and a pass that audits the answer for unsupported claims.</p>
           <div class="stack"><span>LangGraph</span><span>Qdrant + BM25</span><span>BGE reranker</span><span>Hallucination auditing</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/SentinelRAG" target="_blank" rel="noopener">Code →</a></div>
         </article>
@@ -136,7 +135,7 @@
             <h3>voice-dub</h3>
             <span class="badge">Speaker-cloned dubbing</span>
           </div>
-          <p>Time-aligned video dubbing in the original speaker's voice: diarization with pyannote, faster-whisper transcription, NLLB-200 translation, XTTS-v2 voice cloning per speaker, then time-stretching and remuxing back into the video.</p>
+          <p>Time-aligned dubbing in the original speaker's voice: pyannote diarization, faster-whisper, NLLB-200 translation, XTTS-v2 cloning, then time-stretching and remuxing back into the video.</p>
           <div class="stack"><span>Whisper</span><span>pyannote</span><span>NLLB</span><span>XTTS-v2</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/voice-dub-ai-dubbing" target="_blank" rel="noopener">Code →</a></div>
         </article>
@@ -146,57 +145,9 @@
             <h3>Phone Support Agent</h3>
             <span class="badge">Real-time voice AI</span>
           </div>
-          <p>A voice agent that books, reschedules, and cancels appointments over phone calls. Twilio streams the call audio to Deepgram speech-to-text, an LLM drives a state-machine dialogue through tool calls, and ElevenLabs speaks back. Appointments are only confirmed after the backend succeeds, callers can interrupt (barge-in), and hard cases escalate to a human.</p>
+          <p>A voice agent that books, reschedules and cancels appointments over real phone calls: Twilio and Deepgram in, a tool-calling state machine, ElevenLabs out, with barge-in and escalation to a human.</p>
           <div class="stack"><span>Twilio</span><span>Deepgram</span><span>Tool calling</span><span>ElevenLabs</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/phone-support-voice-agent" target="_blank" rel="noopener">Code →</a></div>
-        </article>
-      </section>
-
-      <section class="project-group" data-type="cv health">
-        <h2>Earlier vision work</h2>
-        <p>The projects where I learned computer vision.</p>
-
-        <article class="project" id="pneumonia" data-type="cv health">
-          <div class="project-top">
-            <h3>Pneumonia detection from chest X-rays</h3>
-            <span class="badge">95% accuracy</span>
-          </div>
-          <p>An attention-weighted ensemble of DenseNet121 and EfficientNet.</p>
-          <div class="stack"><span>DenseNet121</span><span>EfficientNet</span><span>Attention ensemble</span></div>
-          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/Pneumonia-Detection-CXR" target="_blank" rel="noopener">Code →</a></div>
-        </article>
-
-        <article class="project" id="camvid" data-type="cv">
-          <div class="project-top">
-            <h3>Semantic segmentation on CamVid</h3>
-          </div>
-          <p>Compared FCN, attention U-Net, and DeepLabV3+.</p>
-          <div class="stack"><span>FCN</span><span>Attention U-Net</span><span>DeepLabV3+</span></div>
-        </article>
-
-        <article class="project" id="voc" data-type="cv">
-          <div class="project-top">
-            <h3>Object detection on PASCAL VOC 2012</h3>
-          </div>
-          <p>Object detection with Faster R-CNN.</p>
-          <div class="stack"><span>Faster R-CNN</span></div>
-        </article>
-
-        <article class="project" id="fingerprint" data-type="cv">
-          <div class="project-top">
-            <h3>Fingerprint forgery detection</h3>
-          </div>
-          <p>Forgery detection on the SOCOFing dataset. This work later led to my perturbation-analysis manuscript on what alteration detectors actually learn.</p>
-          <div class="stack"><span>SOCOFing</span></div>
-        </article>
-
-        <article class="project" id="thesis" data-type="health">
-          <div class="project-top">
-            <h3>Arrhythmia classification with 2-D CNNs</h3>
-            <span class="badge">B.Sc. thesis</span>
-          </div>
-          <p>My undergraduate thesis at Ahsanullah University of Science and Technology: designing an arrhythmia classification algorithm using 2-D convolutional neural networks.</p>
-          <div class="stack"><span>CNN</span><span>ECG</span></div>
         </article>
       </section>
     </div>
