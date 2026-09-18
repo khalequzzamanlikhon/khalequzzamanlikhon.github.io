@@ -268,7 +268,7 @@ const topics = [
 
   { id: 'who',
     keys: ['who are you', 'about yourself', 'introduce yourself', 'your background', 'who is likhon', 'tell me about you', 'who is khalequzzaman', 'about likhon'],
-    reply: `I'm Khalequzzaman Likhon, a machine learning engineer in Dhaka, Bangladesh. I work across computer vision, vision-language and multimodal models, and LLMs, and I care a lot about whether models still work outside the benchmark. I'm applying to PhD programs in computer science.`,
+    reply: `I'm Khalequzzaman Likhon, a machine learning engineer in Dhaka, Bangladesh. I work on computer vision, multimodal models and large language models, and I care a lot about whether models still work outside the benchmark. I'm open to research collaborations in these areas.`,
     more: `Before Accelx, I did my B.Sc. in Computer Science and Engineering at AUST (2016–2021), with a thesis on arrhythmia classification using 2-D CNNs. These days I split my time between building systems and writing papers that test what models have really learned.`,
     next: ['Tell me more', 'What do you research?', 'Tell me about Accelx'] },
 
