@@ -104,20 +104,21 @@
       <section class="section" id="about">
         <h2 class="section-title">About</h2>
         <div class="prose">
-          <p>I'm a machine learning engineer working on video understanding, vision-language models, and language models that explain themselves. I build systems that see what is happening and say what they saw.</p>
+          <p>I'm a machine learning engineer working across computer vision, vision-language and multimodal models, and large language models. I build systems that understand images and video, and language models that report what they found from evidence rather than from memory.</p>
 
-          <p>I care most about reliability: whether a model keeps working outside the benchmark, and whether what it reports can be checked. That question runs through my work on human behaviour in video, on Video LLMs, and on grounded LLM output.</p>
+          <p>I care most about reliability: whether a model still works outside its benchmark, and whether a person can check what it says. That shapes how I build models and how I evaluate them.</p>
 
-          <p>I'm always happy to collaborate on research in these areas.</p>
+          <p>I'm applying to PhD programs in computer science, and I'm always happy to talk about research in these areas.</p>
         </div>
       </section>
 
       <section class="section" id="research">
         <h2 class="section-title">Research interests</h2>
         <ul class="area-list" aria-label="Research areas">
-          <li>Understanding human behaviour from video</li>
-          <li>Video LLMs</li>
-          <li>Grounded AI explanations</li>
+          <li>Computer vision and video understanding</li>
+          <li>Vision-language and multimodal models</li>
+          <li>Large language models and grounded generation</li>
+          <li>Reliable, verifiable AI</li>
         </ul>
         <p class="research-note">Across all of these, I'm drawn to one question: <em>do models still behave reliably once they leave the benchmark?</em></p>
       </section>
@@ -129,7 +130,6 @@
             <option value="all">All news</option>
             <option value="paper">Papers</option>
             <option value="career">Career</option>
-            <option value="course">Courses</option>
             <option value="thesis">Thesis</option>
           </select>
         </div>
@@ -143,11 +143,6 @@
             <span class="news-date">Jan 2025</span>
             <span class="tag">Career</span>
             <p class="news-text">Joined <strong>Accelx Inc.</strong> as a Machine Learning Engineer.</p>
-          </li>
-          <li class="news-item" data-type="course">
-            <span class="news-date">2023</span>
-            <span class="tag">Course</span>
-            <p class="news-text">Completed <strong>Machine Learning</strong> on Coursera.</p>
           </li>
           <li class="news-item" data-type="thesis">
             <span class="news-date">Jan 2021</span>
@@ -167,14 +162,14 @@
           <a class="card reveal" href="projects.html#overcooked">
             <span class="card-kicker">Telemetry vs. video</span>
             <h3>Overcooked AAR</h3>
-            <p>The same model writes an after-action review of real human–human Overcooked play twice — from the event log and from the gameplay video — and every claim it makes is checked against the log.</p>
+            <p>I had one model write an after-action review of real human–human Overcooked play twice, from the event log and from the gameplay video, and checked every claim it made against the log.</p>
             <div class="highlight">Log claims held up <b>81%</b> of the time, video claims <b>53%</b></div>
             <div class="stack"><span>Qwen2.5-VL</span><span>Claim checking</span><span>Pilot study</span></div>
           </a>
           <a class="card reveal" href="projects.html#sentinel">
             <span class="card-kicker">Video anomaly detection</span>
             <h3>Sentinel</h3>
-            <p>Multi-camera, real-time anomaly detection. YOLOv8 + BoT-SORT tracking feeds a rule engine for falls, loitering, abandoned objects, crowding, and wrong-way motion.</p>
+            <p>Tracking-based video anomaly detection. YOLOv8 + BoT-SORT tracking feeds a rule engine for falls, loitering, abandoned objects, crowding, and wrong-way motion.</p>
             <div class="highlight">Full pipeline at <b>19.7 FPS</b> on one GPU</div>
             <div class="stack"><span>YOLOv8</span><span>BoT-SORT</span><span>Rule engine</span></div>
           </a>

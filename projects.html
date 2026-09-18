@@ -75,7 +75,7 @@
             <h3>Overcooked AAR</h3>
             <span class="badge">Telemetry vs. video</span>
           </div>
-          <p><strong>Pilot study, September 2026.</strong> The same model writes an after-action review of real two-player Overcooked play twice — from the event log and from the gameplay video — and every claim is checked against the log. Over 15 episodes, log claims held up <strong>81%</strong> of the time against <strong>53%</strong> for video, and <strong>98%</strong> of the video model's timestamps landed on a 5-second grid, so it was pacing claims evenly instead of reading the clock on screen. Blind pairwise rating built, not yet run.</p>
+          <p><strong>Pilot study, September 2026.</strong> I had one model write an after-action review of real two-player Overcooked play twice, from the event log and from the gameplay video, and checked every claim it made against the log. Over 15 episodes, log claims held up <strong>81%</strong> of the time against <strong>53%</strong> for video, and <strong>98%</strong> of the video model's timestamps landed on a 5-second grid: it was spacing its claims evenly instead of reading the clock on screen. A blind human rating is planned next.</p>
           <div class="stack"><span>Qwen2.5-VL</span><span>Claim verification</span><span>Event extraction</span><span>Human evaluation (pending)</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/overcooked_AAR" target="_blank" rel="noopener">Code →</a></div>
         </article>
@@ -85,7 +85,7 @@
             <h3>Sentinel</h3>
             <span class="badge">Video anomaly detection</span>
           </div>
-          <p>Multi-camera video anomaly detection: YOLOv8 and BoT-SORT feed a rule engine for falls, loitering, abandoned objects, crowding and wrong-way motion, with deduplicated alerts and a dashboard. <strong>19.7 FPS</strong> end to end on an RTX A5000.</p>
+          <p>Tracking-based video anomaly detection: YOLOv8 and BoT-SORT feed a rule engine for falls, loitering, abandoned objects, crowding and wrong-way motion, with deduplicated alerts and a dashboard. <strong>19.7 FPS</strong> end to end on an RTX A5000.</p>
           <div class="stack"><span>YOLOv8</span><span>BoT-SORT</span><span>OpenCV</span><span>Prometheus</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/sentinel-video-anomaly-detection" target="_blank" rel="noopener">Code →</a></div>
         </article>
@@ -115,7 +115,7 @@
             <h3>Research→Code</h3>
             <span class="badge">Multi-agent program synthesis</span>
           </div>
-          <p>Researcher, coder and reviewer agents in LangGraph, with tools served over MCP. Generated code is tested in a sandbox, retries are bounded, and a human approves before anything is written.</p>
+          <p>I built researcher, coder and reviewer agents in LangGraph, with tools served over MCP. The reviewer runs the generated code in a sandbox, the coder gets a limited number of retries, and nothing is written to disk until a person approves it.</p>
           <div class="stack"><span>LangGraph</span><span>MCP</span><span>Sandboxed execution</span><span>Human-in-the-loop</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/research2code" target="_blank" rel="noopener">Code →</a></div>
         </article>

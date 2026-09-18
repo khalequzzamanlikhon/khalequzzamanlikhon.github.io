@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experience — Khalequzzaman Likhon</title>
-  <meta name="description" content="Research experience, education, skills, honors, teaching, and certifications of Md Khalequzzaman Sarker Likhon, Machine Learning Engineer at Accelx Inc.">
+  <meta name="description" content="Experience, education, skills, honors, teaching, and certifications of Md Khalequzzaman Sarker Likhon, Machine Learning Engineer at Accelx Inc.">
   <meta name="author" content="Md Khalequzzaman Sarker Likhon">
   <meta name="theme-color" content="#f5f3ee">
   <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(!t){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)})();</script>
@@ -50,43 +50,49 @@
   <main id="main" class="container">
     <header class="page-header">
       <p class="eyebrow">Experience</p>
-      <h1>Research, education &amp; skills</h1>
+      <h1>Experience, education &amp; skills</h1>
       <p>The full record is in my <a href="khalequzzamanlikhon_cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>.</p>
     </header>
 
     <section class="section" style="padding-top:48px">
-      <h2 class="section-title" style="font-size:24px;margin-bottom:24px">Research experience</h2>
+      <h2 class="section-title" style="font-size:24px;margin-bottom:24px">Experience</h2>
       <ol class="timeline">
         <li class="tl-item">
           <div class="tl-head">
-            <h3>Applied ML Research, Accelx Inc.</h3>
+            <h3>Machine Learning Engineer, Accelx Inc.</h3>
             <span class="tl-date">Jan 2025 — Present</span>
           </div>
-          <p class="tl-org">Machine Learning Engineer (safety-critical perception and language systems) · Dhaka, Bangladesh</p>
+          <p class="tl-org">Real-time video understanding, vision-language models and grounded LLM systems · Dhaka, Bangladesh</p>
 
           <div class="subsystem">
-            <h4>Appearance or body dynamics: recognising violent interaction in video</h4>
+            <h4>Violence recognition in video</h4>
             <ul>
-              <li>Compared a Kinetics-pretrained R(2+1)D-18 (<strong>84.6%</strong> clip accuracy on the RWF-2000 validation split), a Transformer over YOLO11-Pose dynamics for up to four people (<strong>61.7%</strong>) and a pose–RGB fusion model (<strong>69.0%</strong>), with motion-aware clip mining to reduce label noise.</li>
-              <li>Audited the pose features rather than the score: about <strong>70%</strong> of the inter-person "contact" signals came from joints missing for both people, not real proximity.</li>
+              <li>Fine-tuned a Kinetics-pretrained R(2+1)D-18 and deployed it for real-time multi-camera monitoring.</li>
+              <li>Compared it on RWF-2000 with optical-flow, pose-fusion and pose-Transformer models, and it beat all three.</li>
+              <li>Also fine-tuned a YOLOv10-L weapon detector for live streams.</li>
             </ul>
           </div>
 
           <div class="subsystem">
-            <h4>Grounded and abstaining multimodal and LLM systems</h4>
+            <h4>Checking what the pose models learned</h4>
             <ul>
-              <li>Designed a pipeline in which the LLM writes prose only from facts computed deterministically, with every citation checked by a word-overlap test whose threshold was set from observed failures (about 17% overlap for misattributed citations vs. close to 100% for correct ones).</li>
-              <li>Built a staged image threat-analysis cascade (OCR first, a VLM only for hard cases) with knowledge-base verification, calibrated confidence, and handoff to human review.</li>
-              <li>Evaluated generated text with an LLM judge, ROUGE-L, and fact recall.</li>
+              <li>Traced their inter-person "contact" cues to keypoints missing for both people, and found the models did not track people across frames, so could not tell who did what.</li>
             </ul>
           </div>
 
           <div class="subsystem">
-            <h4>Deployed systems</h4>
+            <h4>Zero-shot fall and violence recognition with CLIP</h4>
             <ul>
-              <li>Real-time video safety analytics (weapon, violence, fall) for live multi-camera surveillance, served at sub-100 ms latency with TorchServe.</li>
-              <li>AI risk &amp; content-safety platform: fine-tuned RoBERTa classifiers, deterministic intent aggregation, and grounded, cited Llama 3.2 alerts.</li>
-              <li>Multimodal content &amp; threat analysis (PaddleOCR, Qwen3-VL) and zero-shot URL categorization (BART-MNLI, Redis).</li>
+              <li>Built recognizers on a frozen OpenCLIP model, traced their false positives on real footage to camera viewpoint, lighting and posture, and turned these cases into hard-negative prompts, a fix that needs no retraining.</li>
+            </ul>
+          </div>
+
+          <div class="subsystem">
+            <h4>Grounded LLM and VLM outputs for human reviewers</h4>
+            <ul>
+              <li>Built a pipeline where a local LLM (Llama 3.2) writes alerts only from facts computed in code and fine-tuned RoBERTa risk scores, and added an automatic check on every citation.</li>
+              <li>Designed an OCR → CLIP → Qwen3-VL cascade that calls the VLM only for hard cases, checks findings against a knowledge base and flags weak evidence for review.</li>
+              <li>Built zero-shot URL categorization with BART-MNLI and Redis.</li>
             </ul>
           </div>
         </li>
@@ -114,12 +120,12 @@
       <h2 class="section-title" style="font-size:24px;margin-bottom:24px">Technical skills</h2>
       <div class="skills">
         <div class="skill-cat">
-          <h4>Research tools</h4>
-          <div class="stack"><span>PyTorch</span><span>TensorFlow / Keras</span><span>Hugging Face</span><span>Ultralytics</span><span>scikit-learn</span><span>OpenCV</span><span>W&amp;B</span></div>
+          <h4>Frameworks</h4>
+          <div class="stack"><span>PyTorch</span><span>Hugging Face Transformers</span><span>OpenCLIP</span><span>Ultralytics</span><span>OpenCV</span><span>scikit-learn</span><span>W&amp;B</span></div>
         </div>
         <div class="skill-cat">
           <h4>Methods</h4>
-          <div class="stack"><span>Detection</span><span>Pose estimation</span><span>Tracking</span><span>Video classification</span><span>Vision-language models</span><span>Transformer fine-tuning</span><span>RAG &amp; LLM agents</span><span>Evaluation design</span></div>
+          <div class="stack"><span>Action recognition</span><span>Pose estimation</span><span>Tracking</span><span>Object detection</span><span>Vision-language models &amp; Video LLMs</span><span>Transformer fine-tuning</span><span>LLM grounding &amp; RAG</span><span>Evaluation design &amp; error analysis</span></div>
         </div>
         <div class="skill-cat">
           <h4>Languages</h4>
@@ -127,7 +133,7 @@
         </div>
         <div class="skill-cat">
           <h4>Engineering</h4>
-          <div class="stack"><span>FastAPI</span><span>Docker</span><span>TorchServe</span><span>Redis</span><span>Qdrant</span><span>Git</span><span>Linux</span></div>
+          <div class="stack"><span>FastAPI</span><span>TorchServe</span><span>Docker</span><span>Redis</span><span>Git</span><span>Linux</span></div>
         </div>
       </div>
     </section>

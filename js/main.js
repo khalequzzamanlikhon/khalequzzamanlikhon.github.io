@@ -132,7 +132,7 @@ const entities = [
   {
     id: 'sentinel', kind: 'project', name: 'Sentinel',
     aliases: ['sentinel', 'video anomaly', 'anomaly detection', 'video-anomaly', 'loitering', 'abandoned object'],
-    summary: `Sentinel is my multi-camera, real-time video anomaly detector. YOLOv8 + BoT-SORT handle detection and tracking, and that feeds a rule engine for falls, loitering, abandoned objects, crowd density, and wrong-way motion.`,
+    summary: `Sentinel is my tracking-based video anomaly detector. YOLOv8 + BoT-SORT handle detection and tracking, and that feeds a rule engine for falls, loitering, abandoned objects, crowd density, and wrong-way motion.`,
     detail: `Alerts are deduplicated and stored in SQLite, with Prometheus metrics and a Streamlit dashboard. On an RTX A5000 the full pipeline runs at 19.7 FPS, and a soak test ran 3,268 steps with zero exceptions.`,
     tech: ['YOLOv8', 'BoT-SORT tracking', 'OpenCV', 'Prometheus', 'Streamlit'],
     link: gh('sentinel-video-anomaly-detection')
@@ -140,7 +140,7 @@ const entities = [
   {
     id: 'overcooked', kind: 'project', name: 'Overcooked AAR',
     aliases: ['overcooked', 'overcooked aar', 'overcooked_aar', 'aar', 'after-action', 'after action', 'telemetry', 'gameplay'],
-    summary: `Overcooked AAR asks what a model misses when it reads logs instead of watching. The same model (Qwen2.5-VL) writes an after-action review of real two-player Overcooked play twice — once from the event log, once from the gameplay video — and every claim it makes is checked against the log.`,
+    summary: `Overcooked AAR asks what a model misses when it reads logs instead of watching. I had one model (Qwen2.5-VL) write an after-action review of real two-player Overcooked play twice, once from the event log and once from the gameplay video, and checked every claim it made against the log.`,
     detail: `Across 15 episodes and 1,140 claims, claims from the log held up 81% of the time and claims from the video 53%. The gap is timing rather than invention: 98% of the video model's timestamps landed on a 5-second grid, against 1% for the log, so it was pacing claims evenly instead of reading the clock on screen. It also under-counted deliveries in 41 of 45 minutes. A blind pairwise human rating is built but not yet run.`,
     tech: ['Qwen2.5-VL', 'the overcooked-ai StateVisualizer', 'claim-level verification against the log', 'blind pairwise rating'],
     link: gh('overcooked_AAR')
@@ -165,7 +165,7 @@ const entities = [
     id: 'research2code', kind: 'project', name: 'Research→Code',
     aliases: ['research2code', 'research to code', 'research→code', 'research-to-code', 'researchcode', 'multi-agent', 'multi agent', 'program synthesis', 'coding agent'],
     summary: `Research→Code is a multi-agent program synthesis system: researcher, coder, and reviewer agents built with LangGraph, with tools served over MCP.`,
-    detail: `Generated code is tested in a sandbox, deterministic routing caps the number of retries, and a human approves the result before anything is written.`,
+    detail: `The reviewer runs the generated code in a sandbox, plain Python routing caps the number of retries, and nothing is written to disk until a person approves it.`,
     tech: ['LangGraph', 'MCP (Model Context Protocol)', 'sandboxed code execution', 'human-in-the-loop approval'],
     link: gh('research2code')
   },
@@ -268,13 +268,13 @@ const topics = [
 
   { id: 'who',
     keys: ['who are you', 'about yourself', 'introduce yourself', 'your background', 'who is likhon', 'tell me about you', 'who is khalequzzaman', 'about likhon'],
-    reply: `I'm Khalequzzaman Likhon, a machine learning engineer at Accelx Inc. in Dhaka, Bangladesh. I build vision, video, and language systems for safety-critical use, and I care a lot about whether models still work outside the benchmark.`,
+    reply: `I'm Khalequzzaman Likhon, a machine learning engineer in Dhaka, Bangladesh. I work across computer vision, vision-language and multimodal models, and LLMs, and I care a lot about whether models still work outside the benchmark. I'm applying to PhD programs in computer science.`,
     more: `Before Accelx, I did my B.Sc. in Computer Science and Engineering at AUST (2016–2021), with a thesis on arrhythmia classification using 2-D CNNs. These days I split my time between building systems and writing papers that test what models have really learned.`,
     next: ['Tell me more', 'What do you research?', 'Tell me about Accelx'] },
 
   { id: 'research',
     keys: ['research', 'interest', 'interests', 'focus', 'area', 'areas', 'working on', 'field', 'topics'],
-    reply: `Three things, really: understanding human behaviour from video, Video LLMs, and getting models to give grounded explanations a person can check. The thread through all of it is whether a model still behaves once it leaves the benchmark.`,
+    reply: `Computer vision and video understanding, vision-language and multimodal models, and large language models with grounded generation. The thread through all of it is reliability: whether a model still behaves once it leaves the benchmark, and whether a person can check what it says.`,
     more: `Concretely, I've compared pose-based and appearance-based models for violence recognition, built LLM pipelines where every citation is checked, and written negative-result studies that test models for shortcuts.`,
     next: ['Tell me more', 'Tell me about your papers', 'Are you open to collaboration?'] },
 
@@ -291,13 +291,13 @@ const topics = [
 
   { id: 'accelx',
     keys: ['accelx', 'job', 'work', 'company', 'experience', 'industry', 'employer', 'current role', 'day job', 'weapon', 'violence', 'fall detection', 'surveillance', 'safety'],
-    reply: `I've been a machine learning engineer at Accelx Inc. since January 2025, working on safety-critical perception and language systems. That includes real-time weapon, violence, and fall detection on live multi-camera video at under 100 ms latency, plus a risk-assessment platform that writes grounded, cited alerts.`,
-    more: `The research side is my favourite part. On RWF-2000, I compared a Kinetics-pretrained R(2+1)D-18, a Transformer over YOLO11-Pose dynamics, and a pose–RGB cross-attention model. On the LLM side, the model only writes from facts computed in Python, and a word-overlap test checks every citation. Wrong citations shared about 17% of their words with the source; correct ones shared close to 100%.`,
+    reply: `I've been a machine learning engineer at Accelx Inc. since January 2025, working on safety-critical perception and language systems. That includes real-time violence, weapon, and fall recognition on live multi-camera video, plus a pipeline where an LLM writes grounded, cited alerts.`,
+    more: `The research side is my favourite part. On RWF-2000, I compared a Kinetics-pretrained R(2+1)D-18 with optical-flow, pose-fusion, and pose-Transformer models, and the pretrained appearance model beat all three. On the LLM side, the model only writes from facts computed in code, and every citation is checked automatically.`,
     next: ['Tell me more', 'How do you keep LLMs grounded?', 'What tools do you use?'] },
 
   { id: 'video',
     keys: ['video', 'action recognition', 'pose', 'rwf', 'rwf-2000', 'optical flow', 'spatiotemporal'],
-    reply: `Video understanding is probably my favourite area. I compared appearance-based and pose-based models for fight detection on RWF-2000: R(2+1)D-18, a Transformer over YOLO11-Pose dynamics, and a two-stream cross-attention model. On my own, I built Sentinel, a multi-camera anomaly detector.`,
+    reply: `Video understanding is probably my favourite area. I compared appearance-based and pose-based models for fight recognition on RWF-2000, and a pretrained R(2+1)D-18 beat optical-flow, pose-fusion, and pose-Transformer models. On my own, I built Sentinel, a tracking-based anomaly detector.`,
     more: `Video-level labels are noisy when only part of a clip shows the event, so I also investigated motion-aware clip mining, using dense optical flow plus pose heuristics, to reduce that label noise.`,
     next: ['Tell me more', 'Sentinel?'] },
 
