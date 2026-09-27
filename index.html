@@ -160,32 +160,34 @@
 
         <div class="card-grid">
           <a class="card reveal" href="projects.html#overcooked">
-            <span class="card-kicker">Telemetry vs. video</span>
+            <span class="card-kicker">Evaluating a Video LLM</span>
             <h3>Overcooked AAR</h3>
-            <p>I had one model write an after-action review of real human–human Overcooked play twice, from the event log and from the gameplay video, and checked every claim it made against the log.</p>
-            <div class="highlight">Log claims held up <b>81%</b> of the time, video claims <b>53%</b></div>
+            <p>I had one Video LLM review real human–human Overcooked play twice, from the event log and from the gameplay video, and checked all 1,037 of its claims against the log.</p>
+            <div class="highlight">Log <b>77%</b> vs. video <b>48%</b>, and the video claims score the same at a random time</div>
             <div class="stack"><span>Qwen2.5-VL</span><span>Claim checking</span><span>Pilot study</span></div>
           </a>
-          <a class="card reveal" href="projects.html#sentinel">
-            <span class="card-kicker">Video anomaly detection</span>
-            <h3>Sentinel</h3>
-            <p>Tracking-based video anomaly detection. YOLOv8 + BoT-SORT tracking feeds a rule engine for falls, loitering, abandoned objects, crowding, and wrong-way motion.</p>
-            <div class="highlight">Full pipeline at <b>19.7 FPS</b> on one GPU</div>
-            <div class="stack"><span>YOLOv8</span><span>BoT-SORT</span><span>Rule engine</span></div>
+          <a class="card reveal" href="projects.html#docuvision">
+            <span class="card-kicker">Document understanding</span>
+            <h3>DocuVision</h3>
+            <p>I fine-tuned LayoutLMv3-large and built a learned question→answer linker that turns scanned forms into structured key–value pairs, then released the model on Hugging Face.</p>
+            <div class="highlight">Pair F1 on real scanned forms from <b>0.23</b> to <b>0.74</b></div>
+            <div class="stack"><span>LayoutLMv3</span><span>Ablations</span><span>FUNSD</span></div>
           </a>
-          <a class="card reveal" href="projects.html#docuroute">
-            <span class="card-kicker">Agentic retrieval</span>
-            <h3>DocuRoute</h3>
-            <p>Routes financial questions to hybrid sparse–dense retrieval or sandboxed text-to-SQL over SEC 10-K filings, with cited answers and a custom evaluation harness.</p>
-            <div class="highlight">A general-domain reranker lowered faithfulness from <b>0.93</b> to <b>0.77</b></div>
-            <div class="stack"><span>RAG</span><span>Text-to-SQL</span><span>Evaluation</span></div>
+          <a class="card reveal" href="projects.html#speechtranslator">
+            <span class="card-kicker">Speech-to-speech translation</span>
+            <h3>Speech Translator</h3>
+            <p>I built a translator that speaks your words in Spanish, German or Japanese in your own cloned voice, and chose every model by testing it on FLEURS.</p>
+            <div class="highlight">A <b>100 MB</b> CPU model beat NLLB-200 <b>3.3B</b> on German and Japanese</div>
+            <div class="stack"><span>Whisper</span><span>NLLB-200</span><span>Voice cloning</span></div>
           </a>
-          <a class="card reveal" href="projects.html#depthcraft">
-            <span class="card-kicker">3D from one image</span>
-            <h3>DepthCraft</h3>
-            <p>Lifts Depth Anything V2 metric depth into a 3D point cloud and measures real distances with uncertainty, from a single photo.</p>
-            <div class="stack"><span>Monocular depth</span><span>Point clouds</span><span>Uncertainty</span></div>
-          </a>        </div>
+          <a class="card reveal" href="projects.html#jarvis">
+            <span class="card-kicker">Local voice agent</span>
+            <h3>Jarvis</h3>
+            <p>I built a voice assistant that runs fully on my own hardware and uses sandboxed tools, then tested its tool calls on a held-out set written after tuning.</p>
+            <div class="highlight">Held-out tool-calling accuracy from <b>65%</b> to <b>90%</b></div>
+            <div class="stack"><span>Qwen2.5-7B</span><span>Tool calling</span><span>Whisper</span></div>
+          </a>
+        </div>
       </section>
 
       <section id="contact">

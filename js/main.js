@@ -140,10 +140,34 @@ const entities = [
   {
     id: 'overcooked', kind: 'project', name: 'Overcooked AAR',
     aliases: ['overcooked', 'overcooked aar', 'overcooked_aar', 'aar', 'after-action', 'after action', 'telemetry', 'gameplay'],
-    summary: `Overcooked AAR asks what a model misses when it reads logs instead of watching. I had one model (Qwen2.5-VL) write an after-action review of real two-player Overcooked play twice, once from the event log and once from the gameplay video, and checked every claim it made against the log.`,
-    detail: `Across 15 episodes and 1,140 claims, claims from the log held up 81% of the time and claims from the video 53%. The gap is timing rather than invention: 98% of the video model's timestamps landed on a 5-second grid, against 1% for the log, so it was pacing claims evenly instead of reading the clock on screen. It also under-counted deliveries in 41 of 45 minutes. A blind pairwise human rating is built but not yet run.`,
-    tech: ['Qwen2.5-VL', 'the overcooked-ai StateVisualizer', 'claim-level verification against the log', 'blind pairwise rating'],
+    summary: `Overcooked AAR asks whether a Video LLM reviews a human team better from the game log or from the gameplay video. I had one model (Qwen2.5-VL-7B) write an after-action review of real two-player Overcooked play twice, once from the event log and once from the video, and checked every claim it made against the log.`,
+    detail: `Across 15 episodes and 1,037 claims, claims from the log held up 77% of the time and claims from the video 48%. The key control: if I move each video claim to a random moment in the same minute, it still scores 48%, and swapping P1 and P2 barely changes it. So the model knows what usually happens in a minute of Overcooked, not when it happened or who did it. Making the on-screen clock readable changed how it wrote times, not their accuracy. A blind pairwise human rating is built and comes next.`,
+    tech: ['Qwen2.5-VL', 'the overcooked-ai StateVisualizer', 'claim-level verification against the log', 'random-time and player-swap controls', 'blind pairwise rating'],
     link: gh('overcooked_AAR')
+  },
+  {
+    id: 'docuvision', kind: 'project', name: 'DocuVision',
+    aliases: ['docuvision', 'docu vision', 'docu-vision', 'layoutlm', 'layoutlmv3', 'funsd', 'document understanding', 'document ai', 'key-value', 'key value', 'ocr', 'invoice'],
+    summary: `DocuVision turns scans, PDFs and phone photos of business documents into structured JSON. I fine-tuned LayoutLMv3-large on FUNSD and built a learned question→answer linker, which raised key–value pair F1 on real scanned forms from 0.23 to 0.74. The model is on Hugging Face.`,
+    detail: `The ablations were the most useful part. With perfect entity tags, the old rule-based linker still capped at 0.72 F1, so linking, not tagging, was the bottleneck. Grouping words in reading order was silently costing 25 F1 points on two-column forms. And an earlier claim of 95% table-cell accuracy turned out to be 50%; it's now 94%.`,
+    tech: ['LayoutLMv3', 'a DocLayNet DETR', 'Table Transformer', 'a gradient-boosted linker', 'FastAPI'],
+    link: gh('docuvision')
+  },
+  {
+    id: 'speechtranslator', kind: 'project', name: 'Speech Translator',
+    aliases: ['speech translator', 'speech_translator', 'speech-translator', 'speech-to-speech', 'speech to speech', 'translator', 'translation', 'fleurs', 'nllb', 'chatterbox'],
+    summary: `My speech-to-speech translator lets you speak English and be heard in Spanish, German or Japanese, in your own cloned voice. I chose every component by evaluating it on 300 FLEURS sentences.`,
+    detail: `Two results surprised me. A 100 MB CPU translation model beat NLLB-200 3.3B on German and Japanese, so the system routes per language. And named-entity masking, which sounded like obvious engineering, cost 3–6 BLEU and leaked placeholders into the speech, so I turned it off. I also traced NLLB-3.3B scoring 6 BLEU to a library update that silently dropped the language token; fixed, it scores 28.2.`,
+    tech: ['faster-whisper', 'NLLB-200 and Argos Translate', 'Chatterbox voice cloning', 'Silero VAD', 'Gradio'],
+    link: gh('speech_translator')
+  },
+  {
+    id: 'jarvis', kind: 'project', name: 'Jarvis',
+    aliases: ['jarvis', 'voice assistant', 'local assistant', 'wake word', 'tool calling', 'tool use', 'ollama'],
+    summary: `Jarvis is a voice assistant that runs entirely on my own hardware: wake word, Whisper, a tool-calling Qwen2.5-7B, memory and Piper TTS. It answers with 1.5 s median latency to first audio.`,
+    detail: `I wrote a 40-case tool-calling benchmark and, only after tuning the prompt on it, a 20-case held-out set. Held-out accuracy rose from 65% to 90%. Qwen tended to announce actions it never took, while Llama over-called tools, and across all runs the sandbox blocked every unsafe command.`,
+    tech: ['openWakeWord', 'faster-whisper', 'Qwen2.5-7B via Ollama', 'Piper TTS', 'SQLite memory'],
+    link: gh('jarvis_voice_assistant')
   },
   {
     id: 'depthcraft', kind: 'project', name: 'DepthCraft',
@@ -263,7 +287,7 @@ const topics = [
 
   { id: 'help',
     keys: ['help', 'what can you', 'what can i ask', 'what should i ask', 'options', 'menu'],
-    reply: `You can ask me about my research interests, any of my projects (Sentinel, DocuRoute, DepthCraft…), my papers, my work at Accelx, my skills, my education, or how to get in touch. Follow-ups work too, like "what did you use to build it?" or "link?"`,
+    reply: `You can ask me about my research interests, any of my projects (Overcooked AAR, DocuVision, Jarvis…), my papers, my work at Accelx, my skills, my education, or how to get in touch. Follow-ups work too, like "what did you use to build it?" or "link?"`,
     next: ['What do you research?', 'Show me your projects', 'Tell me about your papers'] },
 
   { id: 'who',
@@ -309,13 +333,13 @@ const topics = [
 
   { id: 'projects',
     keys: ['project', 'projects', 'built', 'portfolio', 'what have you made', 'side project', 'showcase', 'what have you built'],
-    reply: `Eight, roughly in the order I care about them: Overcooked AAR (do a model's claims about a team hold up?), Sentinel (real-time video anomaly detection), DepthCraft (measurable 3D from one photo), DocuRoute (agentic retrieval over 10-K filings), SentinelRAG (self-correcting RAG), Research→Code (multi-agent code synthesis), voice-dub (speaker-cloned dubbing) and the Phone Support Agent. Ask about any of them by name!`,
-    next: ['Sentinel?', 'Overcooked AAR?', 'DocuRoute?', 'DepthCraft?'] },
+    reply: `Eleven, roughly in the order I care about them: Overcooked AAR (do a Video LLM's claims about a team hold up?), DocuVision (document understanding with a fine-tuned LayoutLMv3), a speech-to-speech translator, Jarvis (a local voice agent), DocuRoute (agentic retrieval over 10-K filings), Sentinel (real-time video anomaly detection), DepthCraft (measurable 3D from one photo), SentinelRAG, Research→Code, voice-dub and the Phone Support Agent. Ask about any of them by name!`,
+    next: ['Overcooked AAR?', 'DocuVision?', 'Speech Translator?', 'Jarvis?'] },
 
   { id: 'speech',
     keys: ['voice', 'speech', 'audio', 'whisper', 'tts', 'text-to-speech'],
-    reply: `I've built a few speech projects: voice-dub (translated dubbing in the original speaker's cloned voice), and a Phone Support Agent that books appointments over real calls.`,
-    next: ['voice-dub?', 'Phone Support Agent?'] },
+    reply: `I've built four speech projects: a speech-to-speech translator that speaks in your own cloned voice, Jarvis (a fully local voice assistant with tool calling), voice-dub (translated dubbing in the original speaker's voice), and a Phone Support Agent that books appointments over real calls.`,
+    next: ['Speech Translator?', 'Jarvis?', 'voice-dub?'] },
 
   { id: 'generative',
     keys: ['generative', 'genai', 'gen ai'],

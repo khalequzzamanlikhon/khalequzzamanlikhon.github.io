@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects — Khalequzzaman Likhon</title>
-  <meta name="description" content="Independent projects by Khalequzzaman Likhon in video anomaly detection, 3D depth, telemetry-vs-video analysis, agentic and self-correcting retrieval, multi-agent systems and speech.">
+  <meta name="description" content="Independent projects by Khalequzzaman Likhon: evaluating Video LLMs, document understanding with LayoutLMv3, speech-to-speech translation, local voice agents, agentic retrieval, video anomaly detection, 3D depth and multi-agent systems.">
   <meta name="author" content="Md Khalequzzaman Sarker Likhon">
   <meta name="theme-color" content="#f5f3ee">
   <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(!t){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)})();</script>
@@ -75,31 +75,37 @@
             <h3>Overcooked AAR</h3>
             <span class="badge">Telemetry vs. video</span>
           </div>
-          <p><strong>Pilot study, September 2026.</strong> I had one model write an after-action review of real two-player Overcooked play twice, from the event log and from the gameplay video, and checked every claim it made against the log. Over 15 episodes, log claims held up <strong>81%</strong> of the time against <strong>53%</strong> for video, and <strong>98%</strong> of the video model's timestamps landed on a 5-second grid: it was spacing its claims evenly instead of reading the clock on screen. A blind human rating is planned next.</p>
-          <div class="stack"><span>Qwen2.5-VL</span><span>Claim verification</span><span>Event extraction</span><span>Human evaluation (pending)</span></div>
+          <p><strong>Pilot study, September 2026.</strong> I had one Video LLM write an after-action review of real two-player Overcooked play twice, from the event log and from the gameplay video, and checked every one of its 1,037 timestamped claims against the log. Log claims held up <strong>77%</strong> of the time against <strong>48%</strong> for video. Then I added the control a raw accuracy hides: moved to a random moment in the same minute, the video claims still score <strong>48%</strong>. The model knows what usually happens in a minute of Overcooked, not when it happened. A blind human rating is next.</p>
+          <div class="stack"><span>Qwen2.5-VL</span><span>Claim verification</span><span>Random-time control</span><span>Human evaluation (next)</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/overcooked_AAR" target="_blank" rel="noopener">Code →</a></div>
         </article>
-
-        <article class="project" id="sentinel" data-type="cv">
+        <article class="project" id="docuvision" data-type="cv">
           <div class="project-top">
-            <h3>Sentinel</h3>
-            <span class="badge">Video anomaly detection</span>
+            <h3>DocuVision</h3>
+            <span class="badge">Document understanding</span>
           </div>
-          <p>Tracking-based video anomaly detection: YOLOv8 and BoT-SORT feed a rule engine for falls, loitering, abandoned objects, crowding and wrong-way motion, with deduplicated alerts and a dashboard. <strong>19.7 FPS</strong> end to end on an RTX A5000.</p>
-          <div class="stack"><span>YOLOv8</span><span>BoT-SORT</span><span>OpenCV</span><span>Prometheus</span></div>
-          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/sentinel-video-anomaly-detection" target="_blank" rel="noopener">Code →</a></div>
+          <p>Scans, PDFs and phone photos in, structured JSON out. I fine-tuned LayoutLMv3-large on FUNSD and built a learned question→answer linker, which raised key–value pair F1 on real scanned forms from <strong>0.23 to 0.74</strong>. The ablations taught me the most: with perfect tags the old rule-based linker still capped at 0.72, and grouping words in reading order was silently costing 25 F1 points on two-column forms. The model is on Hugging Face.</p>
+          <div class="stack"><span>LayoutLMv3</span><span>DETR layout</span><span>Table Transformer</span><span>FastAPI</span></div>
+          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/docuvision" target="_blank" rel="noopener">Code →</a><a href="https://huggingface.co/mksl-ai/docuvision-layoutlmv3-large-funsd" target="_blank" rel="noopener">Model →</a></div>
         </article>
-
-        <article class="project" id="depthcraft" data-type="cv">
+        <article class="project" id="speechtranslator" data-type="speech llm">
           <div class="project-top">
-            <h3>DepthCraft</h3>
-            <span class="badge">3D from one image</span>
+            <h3>Speech Translator</h3>
+            <span class="badge">Speech-to-speech translation</span>
           </div>
-          <p>One photo becomes measurable 3D: Depth Anything V2 metric depth lifted into a cleaned point cloud, with a virtual tape measure that reports distance and its uncertainty (18.63 ± 0.29 m). FastAPI backend, Three.js viewer, about 330 ms per image.</p>
-          <div class="stack"><span>Depth Anything V2</span><span>Open3D</span><span>FastAPI</span><span>Three.js</span></div>
-          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/depthcraft-monocular-3d" target="_blank" rel="noopener">Code →</a></div>
+          <p>Speak English, be heard in Spanish, German or Japanese in your own cloned voice. I chose every component by evaluating it on 300 FLEURS sentences: a <strong>100 MB CPU model beat NLLB-200 3.3B</strong> on German and Japanese, so the system routes per language. Named-entity masking, which sounded like obvious engineering, cost 3–6 BLEU, so I turned it off.</p>
+          <div class="stack"><span>Whisper</span><span>NLLB-200</span><span>Chatterbox</span><span>FLEURS evaluation</span></div>
+          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/speech_translator" target="_blank" rel="noopener">Code →</a></div>
         </article>
-
+        <article class="project" id="jarvis" data-type="speech llm">
+          <div class="project-top">
+            <h3>Jarvis</h3>
+            <span class="badge">Local voice agent</span>
+          </div>
+          <p>A voice assistant that runs entirely on my own hardware: wake word, Whisper, a tool-calling Qwen2.5-7B, memory and Piper, with <strong>1.5 s</strong> median latency to first audio. I wrote a held-out test set after tuning the prompt, and tool-calling accuracy on it rose from <strong>65% to 90%</strong>. The sandboxed tools blocked every unsafe command the model tried.</p>
+          <div class="stack"><span>faster-whisper</span><span>Ollama</span><span>Tool calling</span><span>Piper TTS</span></div>
+          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/jarvis_voice_assistant" target="_blank" rel="noopener">Code →</a></div>
+        </article>
         <article class="project" id="docuroute" data-type="llm">
           <div class="project-top">
             <h3>DocuRoute</h3>
@@ -109,17 +115,24 @@
           <div class="stack"><span>RAG</span><span>Hybrid retrieval</span><span>Text-to-SQL</span><span>Evaluation harness</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/DocuRoute" target="_blank" rel="noopener">Code →</a></div>
         </article>
-
-        <article class="project" id="research2code" data-type="llm">
+        <article class="project" id="sentinel" data-type="cv">
           <div class="project-top">
-            <h3>Research→Code</h3>
-            <span class="badge">Multi-agent program synthesis</span>
+            <h3>Sentinel</h3>
+            <span class="badge">Video anomaly detection</span>
           </div>
-          <p>I built researcher, coder and reviewer agents in LangGraph, with tools served over MCP. The reviewer runs the generated code in a sandbox, the coder gets a limited number of retries, and nothing is written to disk until a person approves it.</p>
-          <div class="stack"><span>LangGraph</span><span>MCP</span><span>Sandboxed execution</span><span>Human-in-the-loop</span></div>
-          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/research2code" target="_blank" rel="noopener">Code →</a></div>
+          <p>Tracking-based video anomaly detection: YOLOv8 and BoT-SORT feed a rule engine for falls, loitering, abandoned objects, crowding and wrong-way motion, with deduplicated alerts and a dashboard. <strong>19.7 FPS</strong> end to end on an RTX A5000.</p>
+          <div class="stack"><span>YOLOv8</span><span>BoT-SORT</span><span>OpenCV</span><span>Prometheus</span></div>
+          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/sentinel-video-anomaly-detection" target="_blank" rel="noopener">Code →</a></div>
         </article>
-
+        <article class="project" id="depthcraft" data-type="cv">
+          <div class="project-top">
+            <h3>DepthCraft</h3>
+            <span class="badge">3D from one image</span>
+          </div>
+          <p>One photo becomes measurable 3D: Depth Anything V2 metric depth lifted into a cleaned point cloud, with a virtual tape measure that reports distance and its uncertainty (18.63 ± 0.29 m). FastAPI backend, Three.js viewer, about 330 ms per image.</p>
+          <div class="stack"><span>Depth Anything V2</span><span>Open3D</span><span>FastAPI</span><span>Three.js</span></div>
+          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/depthcraft-monocular-3d" target="_blank" rel="noopener">Code →</a></div>
+        </article>
         <article class="project" id="sentinelrag" data-type="llm">
           <div class="project-top">
             <h3>SentinelRAG</h3>
@@ -129,7 +142,15 @@
           <div class="stack"><span>LangGraph</span><span>Qdrant + BM25</span><span>BGE reranker</span><span>Hallucination auditing</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/SentinelRAG" target="_blank" rel="noopener">Code →</a></div>
         </article>
-
+        <article class="project" id="research2code" data-type="llm">
+          <div class="project-top">
+            <h3>Research→Code</h3>
+            <span class="badge">Multi-agent program synthesis</span>
+          </div>
+          <p>I built researcher, coder and reviewer agents in LangGraph, with tools served over MCP. The reviewer runs the generated code in a sandbox, the coder gets a limited number of retries, and nothing is written to disk until a person approves it.</p>
+          <div class="stack"><span>LangGraph</span><span>MCP</span><span>Sandboxed execution</span><span>Human-in-the-loop</span></div>
+          <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/research2code" target="_blank" rel="noopener">Code →</a></div>
+        </article>
         <article class="project" id="voicedub" data-type="speech">
           <div class="project-top">
             <h3>voice-dub</h3>
@@ -139,7 +160,6 @@
           <div class="stack"><span>Whisper</span><span>pyannote</span><span>NLLB</span><span>XTTS-v2</span></div>
           <div class="card-links"><a href="https://github.com/khalequzzamanlikhon/voice-dub-ai-dubbing" target="_blank" rel="noopener">Code →</a></div>
         </article>
-
         <article class="project" id="phoneagent" data-type="speech llm">
           <div class="project-top">
             <h3>Phone Support Agent</h3>
