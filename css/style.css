@@ -469,6 +469,8 @@ a.card:hover { text-decoration: none; color: inherit; border-color: var(--border
 
 /* ===== FOOTER ===== */
 .site-footer { border-top: 1px solid var(--border); padding: 28px 0; }
+.visit-count { color: var(--muted); }
+.visit-count b { font-family: var(--font-mono); font-weight: 500; color: var(--text-2); }
 .footer-inner {
   max-width: 1120px; margin: 0 auto; padding: 0 24px;
   display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;

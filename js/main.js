@@ -2,6 +2,10 @@
 // Khalequzzaman Likhon — Portfolio JavaScript
 // ============================================
 
+// ----- Analytics -----
+// Runs before GoatCounter's async count.js, so "/" and "/index.html" count as one page.
+window.goatcounter = { path: p => p.replace(/\/index\.html(?=$|[?#])/, '/') };
+
 // ----- Theme -----
 // The initial theme is set by an inline script in <head> to avoid a flash.
 function setTheme(theme) {
@@ -799,6 +803,28 @@ function mountChat() {
   });
 }
 
+// ----- Visit count -----
+// Site-wide total from GoatCounter, appended to the footer. Stays hidden if the
+// request fails (counter disabled, blocked, offline).
+function showVisitCount() {
+  const year = document.getElementById('year');
+  const line = year && year.parentElement;
+  if (!line) return;
+  fetch('https://khalequzzamanlikhon.goatcounter.com/counter/TOTAL.json')
+    .then(r => (r.ok ? r.json() : null))
+    .then(data => {
+      if (!data || !data.count) return;
+      const span = document.createElement('span');
+      span.className = 'visit-count';
+      span.append(' · ');
+      const n = document.createElement('b');
+      n.textContent = String(data.count).trim();
+      span.append(n, ' visits');
+      line.append(span);
+    })
+    .catch(() => {});
+}
+
 // ----- Init -----
 document.addEventListener('DOMContentLoaded', () => {
   setTheme(document.documentElement.getAttribute('data-theme') || 'light');
@@ -810,4 +836,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initFilters();
   initReveal();
   mountChat();
+  showVisitCount();
 });
