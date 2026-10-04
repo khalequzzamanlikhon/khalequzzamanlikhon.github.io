@@ -241,12 +241,12 @@ const entities = [
     tech: ['Faster R-CNN']
   },
   {
-    id: 'fingerprint', kind: 'paper', name: 'Out-of-Focus Is Not Obliteration',
-    aliases: ['fingerprint', 'socofing', 'out-of-focus', 'out of focus', 'obliteration', 'alteration'],
-    summary: `That's "Out-of-Focus Is Not Obliteration: A Perturbation Analysis of Fingerprint Alteration Detectors on Synthetic Benchmarks," co-first-authored with M. M. Sarker. Detectors reach 0.998 macro-F1 on SOCOFing, but they learn editing traces, not alteration.`,
-    detail: `It's a perturbation analysis: instead of trusting the benchmark score, it tests what the detectors actually respond to. I'd also done fingerprint forgery detection on SOCOFing as an earlier vision project.`,
-    status: `It's a manuscript in preparation (2026).`,
-    tech: ['perturbation analysis', 'the synthetic SOCOFing benchmark']
+    id: 'fingerprint', kind: 'paper', name: 'the fingerprint paper',
+    aliases: ['fingerprint', 'socofing', 'blur', 'generator', 'obliteration', 'alteration', 'image and vision computing', 'ivc'],
+    summary: `That's "Blur Sensitivity and Generator Dependence of Fingerprint Alteration Detectors Trained on SOCOFing," written with M. M. Sarker. Detectors reach 0.996–0.998 macro-F1 on SOCOFing, but they react to the smoothness left by the SOCOFing tool, not to ridge damage.`,
+    detail: `A one-pixel blur makes eight of nine image models call 93–97% of genuine prints altered, and the same alterations from an independent generator are mostly missed. Blur-augmented training fixes the false alarms but not the generator gap. I'd also done fingerprint forgery detection on SOCOFing as an earlier vision project.`,
+    status: `It's a manuscript prepared for Image and Vision Computing (Elsevier), 2026.`,
+    tech: ['blur and perturbation tests', 'a second alteration generator', 'the synthetic SOCOFing benchmark']
   },
   {
     id: 'uhpc', kind: 'paper', name: 'the UHPC paper',
@@ -256,11 +256,12 @@ const entities = [
     tech: ['a Feature-Tokenizer Transformer', 'masked multi-task learning']
   },
   {
-    id: 'geometry', kind: 'paper', name: 'Does Geometry Help?',
-    aliases: ['geometry', 'earthquake', 'damage', 'peer hub', 'taxonomy'],
-    summary: `"Does Geometry Help?" is a leakage-audited, negative-result study on post-earthquake damage-type classification, co-first-authored with M. M. Sarker. Cross-attention geometry fusion performed no better than a shuffled-geometry control on PEER Hub ImageNet.`,
-    status: `It's a manuscript in preparation (2026).`,
-    tech: ['cross-attention fusion', 'a taxonomy-consistency loss', 'leakage auditing']
+    id: 'geometry', kind: 'paper', name: 'the earthquake damage paper',
+    aliases: ['earthquake', 'damage', 'peer hub', 'phi-net', 'data audit', 'duplicate', 'jcce', 'asce'],
+    summary: `That's "Data Audit and Revised Baselines for Structural Damage-Type Classification on PEER Hub ImageNet," written with M. M. Sarker. The audit found 91 near-duplicate training pairs, 30 with conflicting labels, and 23 test images with a near-copy in the training set.`,
+    detail: `Under duplicate-aware cross-validation with no tuning on the test set, an ensemble of current image models reaches 77.4% test accuracy, against 72.4% for the best published result on the official split.`,
+    status: `It's a manuscript prepared for the ASCE Journal of Computing in Civil Engineering, 2026.`,
+    tech: ['perceptual-hash duplicate search', 'duplicate-aware cross-validation', 'model ensembling']
   },
   {
     id: 'thesis', kind: 'paper', name: 'my thesis',
@@ -314,7 +315,7 @@ const topics = [
   { id: 'papers',
     keys: ['paper', 'papers', 'publication', 'publications', 'manuscript', 'manuscripts', 'publish', 'journal', 'negative result', 'preprint', 'article'],
     reply: `I have three manuscripts. One is under review at Applied AI Letters (Wiley): a Feature-Tokenizer Transformer that predicts several concrete properties jointly. The other two are in preparation, one on fingerprint alteration detectors and one on post-earthquake damage classification.`,
-    more: `The two in preparation both ask what models really learn. Fingerprint detectors that hit 0.998 macro-F1 turn out to learn editing traces, and adding geometry to earthquake damage classification does no better than a shuffled control. Ask me about any of them by name!`,
+    more: `The two in preparation both check what benchmark scores really mean. Fingerprint detectors that hit 0.998 macro-F1 fail under a one-pixel blur, and the earthquake damage benchmark turns out to contain near-duplicates with conflicting labels. Ask me about any of them by name!`,
     next: ['The concrete paper?', 'The fingerprint paper?', 'The earthquake paper?'] },
 
   { id: 'accelx',

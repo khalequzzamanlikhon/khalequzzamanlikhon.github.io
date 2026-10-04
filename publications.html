@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Publications — Khalequzzaman Likhon</title>
-  <meta name="description" content="Manuscripts by Md Khalequzzaman Sarker Likhon on masked multi-task learning for concrete property prediction, perturbation analysis of fingerprint alteration detectors, and a negative-result study of geometry fusion for earthquake damage classification.">
+  <meta name="description" content="Manuscripts by Md Khalequzzaman Sarker Likhon on masked multi-task learning for concrete property prediction, blur sensitivity and generator dependence of fingerprint alteration detectors, and a data audit with revised baselines for earthquake damage-type classification.">
   <meta name="author" content="Md Khalequzzaman Sarker Likhon">
   <meta name="theme-color" content="#f5f3ee">
   <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(!t){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)})();</script>
@@ -76,22 +76,22 @@
       <article class="pub reveal">
         <div class="pub-year">2026</div>
         <div>
-          <h3>Out-of-Focus Is Not Obliteration: A Perturbation Analysis of Fingerprint Alteration Detectors on Synthetic Benchmarks</h3>
-          <p class="pub-authors"><span class="me">M. K. S. Likhon</span>*, M. M. Sarker*</p>
-          <p class="pub-venue">Manuscript in preparation, 2026</p>
-          <p class="pub-abstract">Detectors reach 0.998 macro-F1 on the synthetic SOCOFing benchmark. A perturbation analysis shows they learn the traces of how the images were edited, not the alteration itself.</p>
-          <div class="stack"><span>Perturbation analysis</span><span>Shortcut learning</span><span>SOCOFing</span></div>
+          <h3>Blur Sensitivity and Generator Dependence of Fingerprint Alteration Detectors Trained on SOCOFing</h3>
+          <p class="pub-authors"><span class="me">M. K. S. Likhon</span>, M. M. Sarker</p>
+          <p class="pub-venue">Manuscript prepared for Image and Vision Computing (Elsevier), 2026</p>
+          <p class="pub-abstract">Ten model variants reach 0.996–0.998 macro-F1 on SOCOFing, with no gain from fusing minutiae. Yet a one-pixel Gaussian blur makes eight of nine image models call 93–97% of genuine prints altered, and the same alteration types from an independent generator are mostly missed (macro-F1 0.38–0.42). Blur-augmented training cuts the false alarms from 94% to 3% but does not close the generator gap.</p>
+          <div class="stack"><span>Benchmark evaluation</span><span>Shortcut learning</span><span>Generalisation</span><span>SOCOFing</span></div>
         </div>
       </article>
 
       <article class="pub reveal">
         <div class="pub-year">2026</div>
         <div>
-          <h3>Does Geometry Help? A Leakage-Audited, Negative-Result Study of Cross-Attention Fusion and Taxonomy-Consistency Loss for Post-Earthquake Damage-Type Classification</h3>
-          <p class="pub-authors"><span class="me">M. K. S. Likhon</span>*, M. M. Sarker*</p>
-          <p class="pub-venue">Manuscript in preparation, 2026</p>
-          <p class="pub-abstract">A study of cross-attention geometry fusion and a taxonomy-consistency loss on PEER Hub ImageNet, audited for data leakage. Geometry fusion performs no better than a control that uses shuffled geometry.</p>
-          <div class="stack"><span>Negative result</span><span>Leakage audit</span><span>Cross-attention</span><span>PEER Hub ImageNet</span></div>
+          <h3>Data Audit and Revised Baselines for Structural Damage-Type Classification on PEER Hub ImageNet</h3>
+          <p class="pub-authors"><span class="me">M. K. S. Likhon</span>, M. M. Sarker</p>
+          <p class="pub-venue">Manuscript prepared for ASCE Journal of Computing in Civil Engineering, 2026</p>
+          <p class="pub-abstract">An audit of the damage-type task of PEER Hub ImageNet finds 91 near-duplicate pairs in the training set, 30 with conflicting labels, and 23 test images with a near-copy in the training set. Under duplicate-aware cross-validation with no tuning on the test set, an ensemble of current image models reaches 77.4% test accuracy, against 72.4% for the best published result on the official split.</p>
+          <div class="stack"><span>Data audit</span><span>Near-duplicates</span><span>Label noise</span><span>PEER Hub ImageNet</span></div>
         </div>
       </article>
     </section>
