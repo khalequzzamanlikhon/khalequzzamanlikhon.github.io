@@ -260,7 +260,7 @@ const entities = [
     aliases: ['earthquake', 'damage', 'peer hub', 'phi-net', 'data audit', 'duplicate', 'jcce', 'asce'],
     summary: `That's "Data Audit and Revised Baselines for Structural Damage-Type Classification on PEER Hub ImageNet," written with M. M. Sarker. The audit found 91 near-duplicate training pairs, 30 with conflicting labels, and 23 test images with a near-copy in the training set.`,
     detail: `Under duplicate-aware cross-validation with no tuning on the test set, an ensemble of current image models reaches 77.4% test accuracy, against 72.4% for the best published result on the official split.`,
-    status: `It's a manuscript prepared for the ASCE Journal of Computing in Civil Engineering, 2026.`,
+    status: `It's a manuscript in preparation (2026).`,
     tech: ['perceptual-hash duplicate search', 'duplicate-aware cross-validation', 'model ensembling']
   },
   {
