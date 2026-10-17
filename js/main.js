@@ -267,7 +267,7 @@ const entities = [
   {
     id: 'thesis', kind: 'paper', name: 'my thesis',
     aliases: ['thesis', 'arrhythmia', 'ecg'],
-    summary: `My B.Sc. thesis at AUST was "Design of an Arrhythmia Classification Algorithm Using 2-D Convolutional Neural Networks."`,
+    summary: `My B.Sc. thesis at AUST was "Design of an Arrhythmia Classification Algorithm Using 2-D Convolutional Neural Networks," written with M. H. Abir, I. Nessa and N. Sakib as equal-contribution authors.`,
     status: `It was my undergraduate thesis, completed in 2021.`,
     tech: ['2-D convolutional neural networks']
   }
@@ -382,11 +382,6 @@ const topics = [
     reply: `I speak Bengali natively and English at full professional proficiency.`,
     next: ['What do you research?'] },
 
-  { id: 'awards',
-    keys: ['award', 'awards', 'honor', 'honors', 'honour', 'scholarship', 'olympiad', 'achievement', 'achievements'],
-    reply: `A few from my school days: Education Board Scholarships for my SSC (2012) and JSC (2009), and 3rd place in a district astro olympiad in 2010.`,
-    next: ['Tell me about your papers', 'Education?'] },
-
   { id: 'certs',
     keys: ['certificat', 'coursera', 'course', 'courses', 'mooc'],
     reply: `I've completed Machine Learning (2023) and Neural Networks and Deep Learning (2021) on Coursera.`,
@@ -394,7 +389,7 @@ const topics = [
 
   { id: 'hobbies',
     keys: ['hobby', 'hobbies', 'free time', 'outside work', 'for fun', 'spare time', 'competitive programming', 'codeforces'],
-    reply: `Outside ML, I've solved 100+ competitive programming problems on Beecrowd, Codeforces, and CodeChef. And back in school, I placed third in a district astro olympiad (2010).`,
+    reply: `Outside ML, I've solved 100+ competitive programming problems on Beecrowd, Codeforces, and CodeChef.`,
     next: ['What do you research?', 'Show me your projects'] },
 
   { id: 'news',
