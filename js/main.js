@@ -339,8 +339,8 @@ const topics = [
 
   { id: 'projects',
     keys: ['project', 'projects', 'built', 'portfolio', 'what have you made', 'side project', 'showcase', 'what have you built'],
-    reply: `Thirteen, roughly in the order I care about them: Overcooked AAR (do a Video LLM's claims about a team hold up?), a speech-to-speech translator, Jarvis (a local voice agent), DocuVision (document understanding with a fine-tuned LayoutLMv3), Research→Code, SentinelRAG, DocuRoute (agentic retrieval over 10-K filings), DepthCraft (measurable 3D from one photo), voice-dub, the Phone Support Agent, Sentinel (real-time video anomaly detection), CamVid segmentation and pneumonia detection from chest X-rays. Ask about any of them by name!`,
-    next: ['Overcooked AAR?', 'Speech Translator?', 'Jarvis?', 'DocuVision?'] },
+    reply: `Thirteen, roughly in the order I care about them: Overcooked AAR (do a Video LLM's claims about a team hold up?), DocuVision (document understanding with a fine-tuned LayoutLMv3), Sentinel (real-time video anomaly detection), DocuRoute (agentic retrieval over 10-K filings), DepthCraft (measurable 3D from one photo), a speech-to-speech translator, Jarvis (a local voice agent), SentinelRAG, Research→Code, voice-dub, the Phone Support Agent, CamVid segmentation and pneumonia detection from chest X-rays. Ask about any of them by name!`,
+    next: ['Overcooked AAR?', 'DocuVision?', 'Sentinel?', 'DocuRoute?'] },
 
   { id: 'speech',
     keys: ['voice', 'speech', 'audio', 'whisper', 'tts', 'text-to-speech'],

@@ -166,31 +166,31 @@
             <div class="project-body">
               <h3><span class="project-num">1.</span> <a href="projects.html#overcooked">Overcooked AAR — evaluating video-language models</a></h3>
               <a class="repo-link" href="https://github.com/khalequzzamanlikhon/overcooked_AAR" target="_blank" rel="noopener">GitHub repository ↗</a>
-              <p>I had Video LLMs review real two-player Overcooked play twice, once from the event log and once from the gameplay video, and checked every claim against the log. On 15 episodes, claims from the log were <strong>67–93%</strong> precise against <strong>22–43%</strong> from video, and the video timing was no better than random.</p>
-            </div>
-          </li>
-          <li class="project-row reveal">
-            <a class="project-thumb" href="projects.html#speechtranslator" tabindex="-1" aria-hidden="true"><img src="assets/projects/speech-translator.jpg" alt="" width="480" height="360" loading="lazy"></a>
-            <div class="project-body">
-              <h3><span class="project-num">2.</span> <a href="projects.html#speechtranslator">Speech Translator — speech-to-speech translation in your own voice</a></h3>
-              <a class="repo-link" href="https://github.com/khalequzzamanlikhon/speech_translator" target="_blank" rel="noopener">GitHub repository ↗</a>
-              <p>I built a translator that says your English in Spanish, German or Japanese in your own cloned voice, and I chose every model by testing it on FLEURS. A <strong>100 MB</strong> CPU model beat NLLB-200 <strong>3.3B</strong> on German and Japanese, so I route each language to the model that does it best.</p>
-            </div>
-          </li>
-          <li class="project-row reveal">
-            <a class="project-thumb" href="projects.html#jarvis" tabindex="-1" aria-hidden="true"><img src="assets/projects/jarvis.jpg" alt="" width="480" height="360" loading="lazy"></a>
-            <div class="project-body">
-              <h3><span class="project-num">3.</span> <a href="projects.html#jarvis">Jarvis — a local voice agent with sandboxed tools</a></h3>
-              <a class="repo-link" href="https://github.com/khalequzzamanlikhon/jarvis_voice_assistant" target="_blank" rel="noopener">GitHub repository ↗</a>
-              <p>I built a voice assistant that runs fully on my own hardware and calls sandboxed tools. On a held-out set I wrote after tuning, its tool-calling accuracy rose from <strong>65%</strong> to <strong>90%</strong>.</p>
+              <p>Can a Video LLM review a human team's play as well from video as from the game's event log? I had Qwen2.5-VL and Qwen3-VL write after-action reviews of real two-player Overcooked games both ways, then checked every timestamped claim against the log. On 15 episodes, claims from the log were <strong>67–93%</strong> precise against <strong>22–43%</strong> from video, and the video timestamps were no better than random.</p>
             </div>
           </li>
           <li class="project-row reveal">
             <a class="project-thumb" href="projects.html#docuvision" tabindex="-1" aria-hidden="true"><img src="assets/projects/docuvision.jpg" alt="" width="480" height="360" loading="lazy"></a>
             <div class="project-body">
-              <h3><span class="project-num">4.</span> <a href="projects.html#docuvision">DocuVision — key–value extraction from scanned documents</a></h3>
+              <h3><span class="project-num">2.</span> <a href="projects.html#docuvision">DocuVision — key–value extraction from scanned documents</a></h3>
               <a class="repo-link" href="https://github.com/khalequzzamanlikhon/docuvision" target="_blank" rel="noopener">GitHub repository ↗</a>
-              <p>I fine-tuned LayoutLMv3-large and built a learned question→answer linker that turns scanned forms into structured key–value pairs. Pair F1 on FUNSD rose from <strong>0.23</strong> to <strong>0.74</strong>, and I released the model on Hugging Face.</p>
+              <p>DocuVision turns scanned forms, PDFs and phone photos into structured key–value pairs. I fine-tuned LayoutLMv3-large and built a learned question→answer linker, which raised pair F1 on FUNSD from <strong>0.23</strong> to <strong>0.74</strong>, and I released the model on Hugging Face.</p>
+            </div>
+          </li>
+          <li class="project-row reveal">
+            <a class="project-thumb" href="projects.html#sentinel" tabindex="-1" aria-hidden="true"><img src="assets/projects/sentinel.jpg" alt="" width="480" height="360" loading="lazy"></a>
+            <div class="project-body">
+              <h3><span class="project-num">3.</span> <a href="projects.html#sentinel">Sentinel — tracking-based video anomaly detection</a></h3>
+              <a class="repo-link" href="https://github.com/khalequzzamanlikhon/sentinel-video-anomaly-detection" target="_blank" rel="noopener">GitHub repository ↗</a>
+              <p>Sentinel watches a video stream and raises alerts for falls, loitering, abandoned objects, crowding and wrong-way motion. I combined YOLOv8 detection and BoT-SORT tracking with a rule engine and deduplicated alerts, and the whole pipeline runs at <strong>19.7 FPS</strong> on an RTX A5000.</p>
+            </div>
+          </li>
+          <li class="project-row reveal">
+            <a class="project-thumb" href="projects.html#docuroute" tabindex="-1" aria-hidden="true"><img src="assets/projects/docuroute.jpg" alt="" width="480" height="360" loading="lazy"></a>
+            <div class="project-body">
+              <h3><span class="project-num">4.</span> <a href="projects.html#docuroute">DocuRoute — routing between retrieval and text-to-SQL</a></h3>
+              <a class="repo-link" href="https://github.com/khalequzzamanlikhon/DocuRoute" target="_blank" rel="noopener">GitHub repository ↗</a>
+              <p>DocuRoute answers questions about SEC 10-K filings with citations. An LLM router I built sends each question to hybrid retrieval or to sandboxed text-to-SQL. In my evaluation harness, a general-domain reranker <strong>lowered faithfulness from 0.93 to 0.77</strong>, so I kept plain hybrid retrieval as the default.</p>
             </div>
           </li>
         </ol>
