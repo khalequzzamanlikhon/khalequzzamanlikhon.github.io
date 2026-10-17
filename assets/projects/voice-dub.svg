@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360">
+  <rect width="480" height="360" fill="#1d2b27"/>
+  <rect x="40" y="48" width="400" height="190" rx="10" fill="#26403a" stroke="#3f6158" stroke-width="2"/>
+  <g fill="#3f6158">
+    <rect x="52" y="58" width="14" height="10" rx="2"/><rect x="52" y="218" width="14" height="10" rx="2"/>
+    <rect x="414" y="58" width="14" height="10" rx="2"/><rect x="414" y="218" width="14" height="10" rx="2"/>
+  </g>
+  <circle cx="240" cy="143" r="38" fill="none" stroke="#82c7b0" stroke-width="4"/>
+  <path d="M229 124v38l31-19z" fill="#82c7b0"/>
+  <text x="64" y="282" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="15" fill="#9fb8b0">EN</text>
+  <text x="64" y="326" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="15" fill="#e3b273">ES</text>
+  <g stroke="#9fb8b0" stroke-width="5" stroke-linecap="round">
+    <path d="M110 277v0M124 270v14M138 264v26M152 272v10M166 260v34M180 268v18M194 274v6M208 262v30M222 270v14M236 266v22M250 276v2M264 263v28M278 270v14M292 266v22M306 274v6M320 261v32M334 269v16M348 275v4M362 266v22M376 272v10M390 268v18M404 274v6M418 277v0"/>
+  </g>
+  <g stroke="#e3b273" stroke-width="5" stroke-linecap="round">
+    <path d="M110 321v0M124 315v12M138 307v28M152 313v16M166 305v32M180 316v10M194 309v24M208 318v6M222 306v30M236 313v16M250 319v4M264 308v26M278 312v18M292 316v10M306 305v32M320 314v14M334 310v22M348 318v6M362 309v24M376 316v10M390 312v18M404 318v6M418 321v0"/>
+  </g>
+</svg>

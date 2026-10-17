@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360">
+  <rect width="480" height="360" fill="#1d2b27"/>
+  <rect x="58" y="60" width="128" height="240" rx="20" fill="#26403a" stroke="#3f6158" stroke-width="3"/>
+  <rect x="72" y="88" width="100" height="176" rx="6" fill="#16221f"/>
+  <circle cx="122" cy="282" r="8" fill="none" stroke="#3f6158" stroke-width="3"/>
+  <g stroke="#82c7b0" stroke-width="5" stroke-linecap="round">
+    <path d="M88 176v0M100 166v20M112 156v40M124 168v16M136 160v32M148 170v12M160 176v0"/>
+  </g>
+  <rect x="222" y="74" width="214" height="54" rx="14" fill="#26403a"/>
+  <text x="240" y="107" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" fill="#cfe0da">Can I move my cleaning?</text>
+  <rect x="252" y="146" width="184" height="54" rx="14" fill="#82c7b0"/>
+  <text x="268" y="179" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" fill="#06120e">Sure, Thursday 3 pm?</text>
+  <rect x="222" y="218" width="214" height="62" rx="14" fill="none" stroke="#3f6158" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="240" y="245" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#e3b273">reschedule(</text>
+  <text x="252" y="266" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#e3b273">day="Thu", time="15:00")</text>
+</svg>

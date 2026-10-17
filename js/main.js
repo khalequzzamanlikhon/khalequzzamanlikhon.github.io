@@ -224,15 +224,16 @@ const entities = [
   {
     id: 'pneumonia', kind: 'project', name: 'Pneumonia detection',
     aliases: ['pneumonia', 'chest x-ray', 'chest xray', 'x-ray', 'xray', 'cxr', 'medical imaging'],
-    summary: `An early vision project: pneumonia detection from chest X-rays using an attention-weighted ensemble of DenseNet121 and EfficientNet. It reached 95% accuracy.`,
-    tech: ['DenseNet121', 'EfficientNet', 'attention-weighted ensembling'],
+    summary: `An early vision project: pneumonia detection from chest X-rays with an attention ensemble of DenseNet121 and EfficientNetB0. My best model reached 92% F1 and 97% AUC on the test set, and I used LIME to check which lung regions drove each prediction.`,
+    tech: ['DenseNet121', 'EfficientNetB0', 'multi-head self-attention and channel attention', 'LIME'],
     link: gh('Pneumonia-Detection-CXR')
   },
   {
     id: 'camvid', kind: 'project', name: 'CamVid segmentation',
     aliases: ['camvid', 'segmentation', 'u-net', 'unet', 'deeplab'],
-    summary: `On CamVid, I compared FCN, attention U-Net, and DeepLabV3+ for semantic segmentation.`,
-    tech: ['FCN', 'attention U-Net', 'DeepLabV3+']
+    summary: `On CamVid, I compared FCN, attention U-Net, and DeepLabV3+ for semantic segmentation, all on a ResNet-50 backbone. The attention U-Net did best, at 45.72% mIoU.`,
+    tech: ['FCN', 'attention U-Net', 'DeepLabV3+', 'a combined Dice–Jaccard loss'],
+    link: gh('Semantic-Segmentation-CamVid')
   },
   {
     id: 'voc', kind: 'project', name: 'PASCAL VOC detection',
@@ -338,8 +339,8 @@ const topics = [
 
   { id: 'projects',
     keys: ['project', 'projects', 'built', 'portfolio', 'what have you made', 'side project', 'showcase', 'what have you built'],
-    reply: `Eleven, roughly in the order I care about them: Overcooked AAR (do a Video LLM's claims about a team hold up?), DocuVision (document understanding with a fine-tuned LayoutLMv3), a speech-to-speech translator, Jarvis (a local voice agent), DocuRoute (agentic retrieval over 10-K filings), Sentinel (real-time video anomaly detection), DepthCraft (measurable 3D from one photo), SentinelRAG, Research→Code, voice-dub and the Phone Support Agent. Ask about any of them by name!`,
-    next: ['Overcooked AAR?', 'DocuVision?', 'Speech Translator?', 'Jarvis?'] },
+    reply: `Thirteen, roughly in the order I care about them: Overcooked AAR (do a Video LLM's claims about a team hold up?), a speech-to-speech translator, Jarvis (a local voice agent), DocuVision (document understanding with a fine-tuned LayoutLMv3), Research→Code, SentinelRAG, DocuRoute (agentic retrieval over 10-K filings), DepthCraft (measurable 3D from one photo), voice-dub, the Phone Support Agent, Sentinel (real-time video anomaly detection), CamVid segmentation and pneumonia detection from chest X-rays. Ask about any of them by name!`,
+    next: ['Overcooked AAR?', 'Speech Translator?', 'Jarvis?', 'DocuVision?'] },
 
   { id: 'speech',
     keys: ['voice', 'speech', 'audio', 'whisper', 'tts', 'text-to-speech'],
