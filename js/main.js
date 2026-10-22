@@ -144,16 +144,16 @@ const entities = [
   {
     id: 'overcooked', kind: 'project', name: 'Overcooked AAR',
     aliases: ['overcooked', 'overcooked aar', 'overcooked_aar', 'aar', 'after-action', 'after action', 'telemetry', 'gameplay'],
-    summary: `Overcooked AAR asks whether a Video LLM reviews a human team better from the game log or from the gameplay video. I had one model (Qwen2.5-VL-7B) write an after-action review of real two-player Overcooked play twice, once from the event log and once from the video, and checked every claim it made against the log.`,
-    detail: `Across 15 episodes and 1,037 claims, claims from the log held up 77% of the time and claims from the video 48%. The key control: if I move each video claim to a random moment in the same minute, it still scores 48%, and swapping P1 and P2 barely changes it. So the model knows what usually happens in a minute of Overcooked, not when it happened or who did it. Making the on-screen clock readable changed how it wrote times, not their accuracy. A blind pairwise human rating is built and comes next.`,
-    tech: ['Qwen2.5-VL', 'the overcooked-ai StateVisualizer', 'claim-level verification against the log', 'random-time and player-swap controls', 'blind pairwise rating'],
+    summary: `Overcooked AAR asks whether a Video LLM can review a human team's play as well from the gameplay video as from the game's event log. I had Qwen2.5-VL and Qwen3-VL write after-action reviews of real two-player Overcooked games both ways, then checked every timestamped claim against the log. On 15 episodes, claims from the log were 67–93% precise against 22–43% from video.`,
+    detail: `The video timestamps were no better than random: moving each video claim to a random moment in the same minute scores about the same. A 1,646-item perception probe over 76 episodes shows why. The models read the clock and the score perfectly, but Qwen2.5-VL can't tell what a chef is holding (24–26% against 25% by chance). I'm running the other 61 episodes and a blind human rating next.`,
+    tech: ['Qwen2.5-VL and Qwen3-VL', 'the overcooked-ai StateVisualizer', 'claim-level verification against the event log', 'random-time and player-swap controls', 'a 1,646-item perception probe'],
     link: gh('overcooked_AAR')
   },
   {
     id: 'docuvision', kind: 'project', name: 'DocuVision',
     aliases: ['docuvision', 'docu vision', 'docu-vision', 'layoutlm', 'layoutlmv3', 'funsd', 'document understanding', 'document ai', 'key-value', 'key value', 'ocr', 'invoice'],
-    summary: `DocuVision turns scans, PDFs and phone photos of business documents into structured JSON. I fine-tuned LayoutLMv3-large on FUNSD and built a learned question→answer linker, which raised key–value pair F1 on real scanned forms from 0.23 to 0.74. The model is on Hugging Face.`,
-    detail: `The ablations were the most useful part. With perfect entity tags, the old rule-based linker still capped at 0.72 F1, so linking, not tagging, was the bottleneck. Grouping words in reading order was silently costing 25 F1 points on two-column forms. And an earlier claim of 95% table-cell accuracy turned out to be 50%; it's now 94%.`,
+    summary: `DocuVision turns scans, PDFs and phone photos of business documents into structured JSON. I fine-tuned LayoutLMv3-large on FUNSD and built a learned question→answer linker, which raised key–value pair F1 on FUNSD from 0.23 to 0.74 with ground-truth words, and from about 0.15–0.17 to 0.43–0.46 end to end on raw scans with OCR. The model is on Hugging Face.`,
+    detail: `The ablations were the most useful part. With perfect entity tags, the old rule-based linker still capped at 0.72 F1, so linking, not tagging, was the bottleneck. Grouping words in reading order was silently costing 25 F1 points on two-column forms.`,
     tech: ['LayoutLMv3', 'a DocLayNet DETR', 'Table Transformer', 'a gradient-boosted linker', 'FastAPI'],
     link: gh('docuvision')
   },
@@ -216,8 +216,8 @@ const entities = [
   {
     id: 'phoneagent', kind: 'project', name: 'Phone Support Agent',
     aliases: ['phone support', 'phone agent', 'phone-support-agent', 'phone-support-voice-agent', 'support agent', 'appointment', 'voice agent', 'phone call'],
-    summary: `Phone Support Agent is a real-time voice AI that books, reschedules, and cancels appointments over phone calls.`,
-    detail: `Twilio streams call audio to Deepgram speech-to-text, an LLM drives a state-machine dialogue through tool calls, and ElevenLabs speaks back. Appointments are only confirmed after the backend succeeds, callers can interrupt (barge-in), and hard cases escalate to a human.`,
+    summary: `Phone Support Agent is a real-time voice AI for a fictional dental clinic that books, reschedules, and cancels appointments.`,
+    detail: `Twilio streams call audio to Deepgram speech-to-text, an LLM drives a state-machine dialogue through tool calls, and ElevenLabs speaks back. Appointments are only confirmed after the backend succeeds, callers can interrupt (barge-in), and hard cases escalate to a human. I verified it offline with scripted calls (6 of 6 automated personas with a stub LLM; 2 of 4 scenarios with a local Llama 3.1 8B). I haven't tested it on live phone calls yet.`,
     tech: ['Twilio', 'Deepgram streaming STT', 'LLM tool calling', 'ElevenLabs TTS', 'FastAPI'],
     link: gh('phone-support-voice-agent')
   },
@@ -246,7 +246,7 @@ const entities = [
     aliases: ['fingerprint', 'socofing', 'blur', 'generator', 'obliteration', 'alteration', 'image and vision computing', 'ivc'],
     summary: `That's "Blur Sensitivity and Generator Dependence of Fingerprint Alteration Detectors Trained on SOCOFing," written with M. M. Sarker. Detectors reach 0.996–0.998 macro-F1 on SOCOFing, but they react to the smoothness left by the SOCOFing tool, not to ridge damage.`,
     detail: `A one-pixel blur makes eight of nine image models call 93–97% of genuine prints altered, and the same alterations from an independent generator are mostly missed. Blur-augmented training fixes the false alarms but not the generator gap. I'd also done fingerprint forgery detection on SOCOFing as an earlier vision project.`,
-    status: `It's a manuscript prepared for Image and Vision Computing (Elsevier), 2026.`,
+    status: `It's a manuscript in preparation (2026), being prepared for Image and Vision Computing (Elsevier).`,
     tech: ['blur and perturbation tests', 'a second alteration generator', 'the synthetic SOCOFing benchmark']
   },
   {
@@ -267,7 +267,7 @@ const entities = [
   {
     id: 'thesis', kind: 'paper', name: 'my thesis',
     aliases: ['thesis', 'arrhythmia', 'ecg'],
-    summary: `My B.Sc. thesis at AUST was "Design of an Arrhythmia Classification Algorithm Using 2-D Convolutional Neural Networks," written with M. H. Abir, I. Nessa and N. Sakib as equal-contribution authors.`,
+    summary: `My B.Sc. thesis at AUST was "Design of an Arrhythmia Classification Algorithm Using 2-D Convolutional Neural Networks," written with M. H. Abir, I. Nessa and N. Sakib as equal-contribution authors and supervised by Prof. Dr. Mohammad Shafiul Alam.`,
     status: `It was my undergraduate thesis, completed in 2021.`,
     tech: ['2-D convolutional neural networks']
   }
@@ -293,14 +293,14 @@ const topics = [
 
   { id: 'help',
     keys: ['help', 'what can you', 'what can i ask', 'what should i ask', 'options', 'menu'],
-    reply: `You can ask me about my research interests, any of my projects (Overcooked AAR, DocuVision, Jarvis…), my papers, my work at Accelx, my skills, my education, or how to get in touch. Follow-ups work too, like "what did you use to build it?" or "link?"`,
-    next: ['What do you research?', 'Show me your projects', 'Tell me about your papers'] },
+    reply: `You can ask me about my research interests, any of my projects (Overcooked AAR, DocuVision, Jarvis…), my papers, my work at Accelx, my skills, my education, my PhD plans, job opportunities, or how to get in touch. Follow-ups work too, like "what did you use to build it?" or "link?"`,
+    next: ['What do you research?', 'Show me your projects', 'Tell me about your papers', 'Are you open to opportunities?'] },
 
   { id: 'who',
     keys: ['who are you', 'about yourself', 'introduce yourself', 'your background', 'who is likhon', 'tell me about you', 'who is khalequzzaman', 'about likhon'],
     reply: `I'm Khalequzzaman Likhon, a machine learning engineer in Dhaka, Bangladesh. I work on computer vision, multimodal models and large language models, and I care a lot about whether models still work outside the benchmark. I'm open to research collaborations in these areas.`,
     more: `Before Accelx, I did my B.Sc. in Computer Science and Engineering at AUST (2016–2021), with a thesis on arrhythmia classification using 2-D CNNs. These days I split my time between building systems and writing papers that test what models have really learned.`,
-    next: ['Tell me more', 'What do you research?', 'Tell me about Accelx'] },
+    next: ['Tell me more', 'What do you research?', 'Are you open to opportunities?'] },
 
   { id: 'research',
     keys: ['research', 'interest', 'interests', 'focus', 'area', 'areas', 'working on', 'field', 'topics'],
@@ -309,9 +309,31 @@ const topics = [
     next: ['Tell me more', 'Tell me about your papers', 'Are you open to collaboration?'] },
 
   { id: 'collab',
-    keys: ['collaborat', 'work together', 'work with you', 'open to', 'opportunit', 'phd', 'graduate', 'masters', 'grad school', 'supervisor', 'professor', 'hire', 'hiring', 'recruit', 'available'],
-    reply: `Yes, I'm open to research collaborations, especially in computer vision, video understanding, and reliable LLM systems. If you have something in mind, email me at ${EMAIL} with a short note about the project and I'll get back to you.`,
-    next: ['What do you research?', 'Can I see your CV?'] },
+    keys: ['collaborat', 'work together', 'work with you', 'open to', 'opportunit', 'available'],
+    reply: `Yes! I'm open to research collaborations, especially in computer vision, video understanding, and reliable LLM systems. I'm also applying to Computer Science PhD programs for Fall 2027, and I'm open to ML/AI engineering roles. Email me at ${EMAIL} with a short note and I'll get back to you.`,
+    next: ['Are you applying for a PhD?', 'Are you open to job offers?', 'Can I see your CV?'] },
+
+  { id: 'phd',
+    keys: ['phd', 'ph.d', 'phd position', 'phd student', 'phd program', 'phd programs', 'doctoral', 'doctorate', 'grad school', 'graduate school', 'graduate program', 'graduate student', 'masters', 'fall 2027', 'prospective student', 'supervisor', 'advisor', 'professor', 'faculty', 'join your lab', 'join my lab', 'your lab', 'admission'],
+    reply: `Yes. I'm applying to Computer Science PhD programs for Fall 2027. I'd like to work on computer vision, video understanding, and vision-language models, especially on whether models stay reliable outside their benchmarks. If you're a faculty member with a related project, I'd love to hear from you at ${EMAIL}. My CV is here: khalequzzamanlikhon_cv.pdf`,
+    more: `My work keeps turning into research questions. At Accelx, pose-based violence models took their "contact" cues from keypoints missing for both people. In Overcooked AAR, Video LLMs read the clock and score perfectly but couldn't tell what a chef was holding. I want to study failures like these properly, not just patch them.`,
+    next: ['Tell me more', 'What do you research?', 'Tell me about your papers', 'Can I see your CV?'] },
+
+  { id: 'jobs',
+    keys: ['hire', 'hiring', 'hire you', 'recruit', 'recruiter', 'recruiting', 'job offer', 'job offers', 'job opening', 'job opportunit', 'new job', 'new role', 'looking for a job', 'looking for work', 'open to work', 'full-time', 'full time', 'part-time', 'freelance', 'position', 'vacancy', 'ml engineer', 'ai engineer', 'we are hiring', 'engineering role'],
+    reply: `I'm a Machine Learning Engineer at Accelx Inc., and I'm open to hearing about ML/AI engineering roles, especially in computer vision, video understanding, or LLM systems (RAG, agents, evaluation). The best way to reach me is ${EMAIL}, and my CV is here: khalequzzamanlikhon_cv.pdf`,
+    more: `What I bring: models taken from fine-tuning to real-time deployment (a violence recognizer on live multi-camera video), LLM pipelines that cite and check their sources, and a habit of finding out why a model fails before trying to fix it. My usual stack is PyTorch, Hugging Face, LangChain and LangGraph, FastAPI, and Docker.`,
+    next: ['Tell me more', 'What tools do you use?', 'Tell me about Accelx', 'Can I see your CV?'] },
+
+  { id: 'strengths',
+    keys: ['strength', 'strengths', 'strongest', 'best project', 'best work', 'proudest', 'proud of', 'favorite project', 'favourite project', 'why should', 'why hire', 'stand out', 'what makes you', 'unique', 'highlight'],
+    reply: `If I had to pick one project, it's Overcooked AAR: I checked every claim a Video LLM made against the game log and traced its failures to perception. That's how I like to work. I build a system end to end, then test where it breaks: shortcut cues in pose models, a one-pixel blur that fools fingerprint detectors, near-duplicates hiding in a benchmark, a reranker that hurt faithfulness.`,
+    next: ['Overcooked AAR?', 'Tell me about your papers', 'Show me your projects'] },
+
+  { id: 'teaching',
+    keys: ['teach', 'teaching', 'tutor', 'tutoring', 'mentor', 'mentoring', 'volunteer', 'service', 'organiz', 'codeware', 'contest'],
+    reply: `I tutored secondary and higher-secondary students (grades 10–12) from 2017 to 2022, and I was on the organizing committee of AUST's Codeware programming contest in 2019.`,
+    next: ['Tell me about your education', 'What do you research?'] },
 
   { id: 'papers',
     keys: ['paper', 'papers', 'publication', 'publications', 'manuscript', 'manuscripts', 'publish', 'journal', 'negative result', 'preprint', 'article'],
@@ -322,18 +344,18 @@ const topics = [
   { id: 'accelx',
     keys: ['accelx', 'job', 'work', 'company', 'experience', 'industry', 'employer', 'current role', 'day job', 'weapon', 'violence', 'fall detection', 'surveillance', 'safety'],
     reply: `I've been a machine learning engineer at Accelx Inc. since January 2025, working on safety-critical perception and language systems. That includes real-time violence, weapon, and fall recognition on live multi-camera video, plus a pipeline where an LLM writes grounded, cited alerts.`,
-    more: `The research side is my favourite part. On RWF-2000, I compared a Kinetics-pretrained R(2+1)D-18 with optical-flow, pose-fusion, and pose-Transformer models, and the pretrained appearance model beat all three. On the LLM side, the model only writes from facts computed in code, and every citation is checked automatically.`,
+    more: `The research side is my favorite part. On RWF-2000, I compared a Kinetics-pretrained R(2+1)D-18 with optical-flow, pose-fusion, and pose-Transformer models, and the pretrained appearance model beat all three. On the LLM side, the model only writes from facts computed in code, and every citation is checked automatically.`,
     next: ['Tell me more', 'How do you keep LLMs grounded?', 'What tools do you use?'] },
 
   { id: 'video',
     keys: ['video', 'action recognition', 'pose', 'rwf', 'rwf-2000', 'optical flow', 'spatiotemporal'],
-    reply: `Video understanding is probably my favourite area. I compared appearance-based and pose-based models for fight recognition on RWF-2000, and a pretrained R(2+1)D-18 beat optical-flow, pose-fusion, and pose-Transformer models. On my own, I built Sentinel, a tracking-based anomaly detector.`,
+    reply: `Video understanding is probably my favorite area. I compared appearance-based and pose-based models for fight recognition on RWF-2000, and a pretrained R(2+1)D-18 beat optical-flow, pose-fusion, and pose-Transformer models. On my own, I built Sentinel, a tracking-based anomaly detector.`,
     more: `Video-level labels are noisy when only part of a clip shows the event, so I also investigated motion-aware clip mining, using dense optical flow plus pose heuristics, to reduce that label noise.`,
     next: ['Tell me more', 'Sentinel?'] },
 
   { id: 'llm',
-    keys: ['llm', 'llms', 'language model', 'language models', 'rag', 'retrieval', 'grounding', 'grounded', 'hallucinat', 'citation', 'citations', 'agent', 'agents', 'small model'],
-    reply: `My rule with LLMs: don't trust the model to know facts. In one pipeline, the LLM only writes prose from facts computed deterministically in Python, and a word-overlap test checks every citation. On the project side, there's DocuRoute (agentic retrieval over 10-K filings), SentinelRAG (self-correcting RAG), and Research→Code (multi-agent code synthesis).`,
+    keys: ['llm', 'llms', 'language model', 'language models', 'rag', 'retrieval', 'grounding', 'grounded', 'hallucinat', 'citation', 'citations', 'agent', 'agents', 'small model', 'langchain', 'langgraph', 'mcp', 'vector database', 'vector db', 'openai', 'prompt'],
+    reply: `My rule with LLMs: don't trust the model to know facts. In one pipeline at work, the LLM only writes prose from facts computed deterministically in Python, and a word-overlap test checks every citation. On the project side, there's DocuRoute (routing between hybrid retrieval and text-to-SQL over 10-K filings), SentinelRAG (self-correcting RAG with hallucination auditing), and Research→Code (multi-agent code generation with MCP tools). I build these mostly with LangChain and LangGraph.`,
     more: `One result I like: in DocuRoute, a general-domain reranker lowered faithfulness from 0.93 to 0.77 on financial filings. Even "safe" components can break under domain shift.`,
     next: ['Tell me more', 'DocuRoute?', 'Research→Code?'] },
 
@@ -343,8 +365,8 @@ const topics = [
     next: ['Overcooked AAR?', 'DocuVision?', 'Sentinel?', 'DocuRoute?'] },
 
   { id: 'speech',
-    keys: ['voice', 'speech', 'audio', 'whisper', 'tts', 'text-to-speech'],
-    reply: `I've built four speech projects: a speech-to-speech translator that speaks in your own cloned voice, Jarvis (a fully local voice assistant with tool calling), voice-dub (translated dubbing in the original speaker's voice), and a Phone Support Agent that books appointments over real calls.`,
+    keys: ['voice', 'speech', 'audio', 'whisper', 'tts', 'text-to-speech', 'speech project', 'voice project', 'audio project'],
+    reply: `I've built four speech projects: a speech-to-speech translator that speaks in your own cloned voice, Jarvis (a fully local voice assistant with tool calling), voice-dub (translated dubbing in the original speaker's voice), and a Phone Support Agent that handles appointment calls (tested with scripted calls so far).`,
     next: ['Speech Translator?', 'Jarvis?', 'voice-dub?'] },
 
   { id: 'generative',
@@ -354,7 +376,7 @@ const topics = [
 
   { id: 'skills',
     keys: ['skill', 'skills', 'stack', 'tools', 'framework', 'frameworks', 'tech stack', 'technologies', 'pytorch', 'tensorflow', 'programming language', 'coding language'],
-    reply: `Mostly PyTorch, plus TensorFlow/Keras, Hugging Face, Ultralytics, scikit-learn, OpenCV, and W&B. For engineering: Python, C/C++, SQL, and Bash, with FastAPI, Docker, TorchServe, Redis, Qdrant, Git, and Linux. Methods-wise, I work on detection, pose estimation and tracking, video classification, vision-language models, transformer fine-tuning, RAG and agents, and evaluation design.`,
+    reply: `Mostly PyTorch, plus TensorFlow/Keras, Hugging Face Transformers, OpenCLIP, Ultralytics, OpenCV, scikit-learn, and W&B. For LLM work: LangChain, LangGraph, MCP, Ollama, and the OpenAI, Anthropic, Gemini, and Groq APIs. For engineering: Python, C/C++, SQL, and Bash, with FastAPI, Docker, TorchServe, Redis, Qdrant, Prometheus, Git, and Linux. Methods-wise, I work on detection, pose estimation and tracking, segmentation, video classification, vision-language models, document AI, transformer fine-tuning, RAG and agents, and evaluation design.`,
     next: ['Show me your projects', 'Tell me about Accelx'] },
 
   { id: 'education',
@@ -364,7 +386,7 @@ const topics = [
 
   { id: 'gpa',
     keys: ['cgpa', 'gpa', 'grades'],
-    reply: `My CGPA was 2.74 out of 4.00. It's listed on my CV as well.`,
+    reply: `My CGPA was 2.74 out of 4.00. My final semester was my strongest, at 3.56, with A grades in Pattern Recognition, Digital Image Processing, and Computer Graphics.`,
     next: ['What do you research?', 'Tell me about your papers'] },
 
   { id: 'cv',
@@ -374,7 +396,7 @@ const topics = [
 
   { id: 'location',
     keys: ['where are you', 'where do you live', 'location', 'located', 'which country', 'bangladesh', 'dhaka', 'time zone', 'timezone'],
-    reply: `I'm based in Dhaka, Bangladesh.`,
+    reply: `I'm based in Dhaka, Bangladesh (GMT+6).`,
     next: ['How can I contact you?', 'Tell me about Accelx'] },
 
   { id: 'languages',
@@ -400,7 +422,7 @@ const topics = [
   { id: 'contact',
     keys: ['contact', 'email', 'e-mail', 'reach', 'mail', 'linkedin', 'orcid', 'connect', 'get in touch', 'talk to you', 'message you', 'github profile'],
     reply: `Email is best: ${EMAIL}. You can also find me on LinkedIn (${LINKS.linkedin}), GitHub (${LINKS.github}), and ORCID (${LINKS.orcid}).`,
-    next: ['Are you open to collaboration?', 'Can I see your CV?'] },
+    next: ['Are you open to opportunities?', 'Can I see your CV?'] },
 
   { id: 'private',
     keys: ['age', 'how old', 'married', 'salary', 'religion', 'girlfriend', 'wife'],
@@ -425,7 +447,7 @@ const attributes = [
   { id: 'detail', keys: ['how does', 'how did', 'how it works', 'works', 'explain', 'detail', 'details', 'more', 'elaborate', 'deeper', 'why'] }
 ];
 
-const DEFAULT_NEXT = ['What do you research?', 'Show me your projects', 'Tell me about your papers', 'How can I contact you?'];
+const DEFAULT_NEXT = ['What do you research?', 'Show me your projects', 'Tell me about your papers', 'Are you open to opportunities?'];
 const SOCIAL = ['hello', 'howareyou', 'thanks'];
 
 // ---- Text utilities ----
@@ -630,7 +652,7 @@ function createAgent() {
     // 5. Fallback
     state.topic = null;
     return {
-      text: `Hmm, I'm not sure how to answer that one. I can tell you about my research, projects, papers, or background. Or email me at ${EMAIL} and I'll reply personally.`,
+      text: `Hmm, I'm not sure how to answer that one. I can tell you about my research, projects, papers, skills, background, PhD plans, or job opportunities. Or email me at ${EMAIL} and I'll reply personally.`,
       next: DEFAULT_NEXT
     };
   };
@@ -657,7 +679,7 @@ function renderRich(el, text) {
 }
 
 function mountChat() {
-  const STORE = 'likhon-chat-v2';
+  const STORE = 'likhon-chat-v3';
   const widget = document.createElement('div');
   widget.className = 'chat-widget';
   widget.innerHTML = `
@@ -678,7 +700,7 @@ function mountChat() {
       <div class="chat-messages" aria-live="polite"></div>
       <div class="quick"></div>
       <form class="chat-form">
-        <input type="text" maxlength="400" aria-label="Type your message" placeholder="Ask me anything…" autocomplete="off">
+        <input type="text" maxlength="400" aria-label="Type your message" placeholder="Ask about my projects, papers, or plans…" autocomplete="off">
         <button type="submit" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </form>
     </div>
@@ -756,7 +778,7 @@ function mountChat() {
     botSay(text, next);
   }
 
-  const greet = () => botSay(`Hi, I'm Likhon 👋 Ask me about my research, projects, or papers. You can also ask follow-ups like "link?" or "what did you use to build it?"`, DEFAULT_NEXT);
+  const greet = () => botSay(`Hi, I'm Likhon 👋 Ask me about my research, projects, papers, or plans. Follow-ups like "link?" or "what did you use to build it?" work too.`, DEFAULT_NEXT);
 
   // Restore this tab's conversation across pages
   try {

@@ -22,7 +22,7 @@
         <li><a href="projects.html">Projects</a></li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="experience.html" aria-current="page">Experience</a></li>
-        <li><a href="blog.html">Writing</a></li>
+        <!-- Writing hidden until the first post is published: <li><a href="blog.html">Writing</a></li> -->
       </ul>
       <div class="nav-actions">
         <a class="btn-cv" href="khalequzzamanlikhon_cv.pdf" target="_blank" rel="noopener">CV</a>
@@ -42,7 +42,7 @@
       <li><a href="projects.html">Projects</a></li>
       <li><a href="publications.html">Publications</a></li>
       <li><a href="experience.html" aria-current="page">Experience</a></li>
-      <li><a href="blog.html">Writing</a></li>
+      <!-- Writing hidden until the first post is published: <li><a href="blog.html">Writing</a></li> -->
       <li><a href="khalequzzamanlikhon_cv.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
     </ul>
   </div>
@@ -90,7 +90,7 @@
           <div class="subsystem">
             <h4>Grounded LLM and VLM outputs for human reviewers</h4>
             <ul>
-              <li>Built a pipeline where a local LLM (Llama 3.2) writes alerts only from facts computed in code and fine-tuned RoBERTa risk scores, and added an automatic check on every citation.</li>
+              <li>Built a pipeline where a local LLM writes alerts only from facts computed in code and fine-tuned RoBERTa risk scores, and added an automatic check on every citation.</li>
               <li>Designed an OCR → CLIP → Qwen3-VL cascade that calls the VLM only for hard cases, checks findings against a knowledge base and flags weak evidence for review.</li>
               <li>Built zero-shot URL categorization with BART-MNLI and Redis.</li>
             </ul>
@@ -125,7 +125,11 @@
         </div>
         <div class="skill-cat">
           <h4>Methods</h4>
-          <div class="stack"><span>Action recognition</span><span>Pose estimation</span><span>Tracking</span><span>Object detection</span><span>Vision-language models &amp; Video LLMs</span><span>Transformer fine-tuning</span><span>LLM grounding &amp; RAG</span><span>Evaluation design &amp; error analysis</span></div>
+          <div class="stack"><span>Action recognition</span><span>Pose estimation</span><span>Tracking</span><span>Object detection</span><span>Segmentation</span><span>Document AI</span><span>Vision-language models &amp; Video LLMs</span><span>Transformer fine-tuning</span><span>LLM grounding &amp; RAG</span><span>Evaluation design &amp; error analysis</span></div>
+        </div>
+        <div class="skill-cat">
+          <h4>LLMs &amp; GenAI</h4>
+          <div class="stack"><span>LangChain</span><span>LangGraph</span><span>RAG (hybrid BM25 + dense, reranking)</span><span>Text-to-SQL</span><span>MCP</span><span>Tool calling</span><span>Ollama</span><span>LLM APIs (OpenAI, Anthropic, Gemini, Groq)</span><span>Whisper</span><span>NLLB-200</span><span>Voice-cloning TTS</span></div>
         </div>
         <div class="skill-cat">
           <h4>Languages</h4>
@@ -133,7 +137,7 @@
         </div>
         <div class="skill-cat">
           <h4>Engineering</h4>
-          <div class="stack"><span>FastAPI</span><span>TorchServe</span><span>Docker</span><span>Redis</span><span>Git</span><span>Linux</span></div>
+          <div class="stack"><span>FastAPI</span><span>TorchServe</span><span>Docker</span><span>Redis</span><span>Qdrant</span><span>Prometheus</span><span>Git</span><span>Linux</span></div>
         </div>
       </div>
     </section>
